@@ -1,1791 +1,2296 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shafiya Naaz — Data & Business Analyst</title>
-<meta name="description" content="Shafiya Naaz — Data Analyst & Business Analyst helping companies make data-driven decisions">
-<meta name="keywords" content="Data Analyst, Business Analyst, Python, SQL, Power BI, Azure, Snowflake, Business Intelligence">
-<meta name="author" content="Shafiya Naaz">
-
-<meta property="og:title" content="Shafiya Naaz — Data & Business Analyst">
-<meta property="og:description" content="Transforming data into business value through analytics and strategic insights.">
-<meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-card: #16161f;
-  --text: #ffffff;
-  --text-muted: #9ca3af;
-  --text-secondary: #6b7280;
-  --border: #2a2a3a;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --accent-glow: rgba(99, 102, 241, 0.3);
-  --success: #10b981;
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  --nav-bg: rgba(10, 10, 15, 0.95);
-}
-
-[data-theme="light"] {
-  --bg: #ffffff;
-  --bg-secondary: #f8f9fc;
-  --bg-card: #ffffff;
-  --text: #1a1a2e;
-  --text-muted: #4b5563;
-  --text-secondary: #6b7280;
-  --border: #e5e7eb;
-  --accent: #4f46e5;
-  --accent-light: #6366f1;
-  --accent-glow: rgba(79, 70, 229, 0.15);
-  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  --nav-bg: rgba(255, 255, 255, 0.95);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
-  transition: background 0.4s ease, color 0.4s ease;
-  overflow-x: hidden;
-}
-
-a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
-a:hover { color: var(--accent); }
-.wrap { max-width: 1200px; margin: auto; padding: 0 24px; }
-
-/* ===== NAVIGATION ===== */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: all 0.3s ease;
-}
-
-.nav {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.links {
-  display: flex;
-  gap: 28px;
-  color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.links a:hover { color: var(--accent); }
-
-.nav-right { display: flex; align-items: center; gap: 20px; }
-
-.theme-toggle {
-  width: 44px; height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg-card);
-  color: var(--text);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: white;
-  transform: rotate(15deg);
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 0 80px;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(180deg, rgba(10,10,15,0.85) 0%, rgba(10,10,15,0.6) 50%, rgba(10,10,15,0.9) 100%),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-  filter: saturate(0.8) contrast(1.05);
-  z-index: -2;
-  animation: bgPan 30s ease-in-out infinite alternate;
-}
-
-[data-theme="light"] .hero-bg {
-  background: 
-    linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.92) 100%),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
-  filter: saturate(0.7) brightness(1.1);
-}
-
-@keyframes bgPan {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
-}
-
-.hero .wrap {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 50px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-content {
-  max-width: 700px;
-  position: relative;
-  z-index: 1;
-  text-align: left;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--bg-card);
-  font: 500 12px "DM Mono", monospace;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-  backdrop-filter: blur(10px);
-}
-
-.hero-badge::before {
-  content: "";
-  width: 8px; height: 8px;
-  background: var(--success);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
-}
-
-.hero h1 {
-  font-size: clamp(48px, 7vw, 80px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  margin-bottom: 24px;
-  font-weight: 800;
-}
-
-.hero h1 span {
-  background: linear-gradient(135deg, var(--accent-light), #a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero-subtitle {
-  font-size: clamp(18px, 2.5vw, 22px);
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 40px;
-  max-width: 700px;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.btn {
-  padding: 14px 28px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: white;
-  border: none;
-  box-shadow: 0 10px 30px var(--accent-glow);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px var(--accent-glow);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  background: var(--bg-card);
-  transform: translateY(-2px);
-}
-
-.hero-stats {
-  display: flex;
-  gap: 40px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
-}
-
-.stat { display: flex; flex-direction: column; }
-
-.stat-value {
-  font-size: 36px;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--accent-light), #a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 8px;
-  font-weight: 500;
-}
-
-/* Anime Girl Image */
-.hero-image {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  box-shadow: var(--card-shadow);
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-/* ===== VALUE PROPOSITION ===== */
-.value-prop { padding: 120px 0; background: var(--bg-secondary); }
-
-.section-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 60px;
-}
-
-.section-badge {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font: 600 11px "DM Mono", monospace;
-  color: var(--accent-light);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 16px;
-  background: var(--bg-card);
-}
-
-.section-title {
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.section-subtitle {
-  font-size: 18px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.value-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.value-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--gradient-1);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.value-card:nth-child(2)::before { background: var(--gradient-2); }
-.value-card:nth-child(3)::before { background: var(--gradient-3); }
-
-.value-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: var(--card-shadow);
-}
-
-.value-card:hover::before { transform: scaleX(1); }
-
-.value-icon {
-  width: 56px; height: 56px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  margin-bottom: 24px;
-  background: var(--gradient-1);
-}
-
-.value-card:nth-child(2) .value-icon { background: var(--gradient-2); }
-.value-card:nth-child(3) .value-icon { background: var(--gradient-3); }
-
-.value-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-
-.value-card p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-/* ===== SKILLS WITH IMPACT ===== */
-.skills-section { padding: 120px 0; }
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.skill-impact-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
-  transition: all 0.3s ease;
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.skill-impact-card:hover {
-  border-color: var(--accent);
-  transform: translateX(8px);
-  box-shadow: var(--card-shadow);
-}
-
-.skill-icon {
-  width: 64px; height: 64px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  background: var(--gradient-1);
-  flex-shrink: 0;
-}
-
-.skill-impact-card:nth-child(2) .skill-icon { background: var(--gradient-2); }
-.skill-impact-card:nth-child(3) .skill-icon { background: var(--gradient-3); }
-.skill-impact-card:nth-child(4) .skill-icon { background: var(--gradient-1); }
-.skill-impact-card:nth-child(5) .skill-icon { background: var(--gradient-2); }
-.skill-impact-card:nth-child(6) .skill-icon { background: var(--gradient-3); }
-.skill-impact-card:nth-child(7) .skill-icon { background: var(--gradient-1); }
-.skill-impact-card:nth-child(8) .skill-icon { background: var(--gradient-2); }
-
-.skill-content { flex: 1; }
-
-.skill-name {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.skill-problem {
-  color: var(--text-secondary);
-  font-size: 14px;
-  margin-bottom: 12px;
-  font-style: italic;
-}
-
-.skill-solution {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.skill-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-
-.skill-tag {
-  padding: 6px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font: 500 11px "DM Mono", monospace;
-  color: var(--text-secondary);
-}
-
-/* ===== BUSINESS ACUMEN ===== */
-.business-section {
-  padding: 120px 0;
-  background: var(--bg-secondary);
-}
-
-.business-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-  margin-top: 60px;
-}
-
-.business-content h3 {
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  letter-spacing: -0.03em;
-}
-
-.business-content p {
-  color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-.business-metrics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.metric-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-}
-
-.metric-value {
-  font-size: 42px;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--accent-light), #a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.metric-label {
-  font-size: 13px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.business-visual {
-  position: relative;
-  height: 500px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: var(--card-shadow);
-}
-
-.business-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(180deg, transparent 0%, var(--bg-card) 100%),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover;
-  filter: brightness(0.7);
-}
-
-.floating-card {
-  position: absolute;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: var(--card-shadow);
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-card:nth-child(1) { top: 80px; left: 40px; }
-.floating-card:nth-child(2) { top: 180px; right: 40px; animation-delay: 2s; }
-.floating-card:nth-child(3) { bottom: 80px; left: 60px; animation-delay: 4s; }
-
-.float-icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  margin-bottom: 12px;
-  background: var(--gradient-1);
-}
-
-.float-title {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.float-value {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-/* ===== PROJECTS SECTION ===== */
-.projects-section { padding: 120px 0; }
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--gradient-1);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: var(--card-shadow);
-}
-
-.project-card:hover::before { transform: scaleX(1); }
-
-.project-num {
-  font: 600 11px "DM Mono", monospace;
-  color: var(--accent-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.project-card h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-
-.project-card p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.project-impact {
-  background: var(--bg-secondary);
-  border-left: 3px solid var(--accent);
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.project-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.project-tag {
-  padding: 6px 12px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font: 500 11px "DM Mono", monospace;
-  color: var(--text-secondary);
-}
-
-/* ===== EXPERIENCE SECTION ===== */
-.experience-section {
-  padding: 120px 0;
-  background: var(--bg-secondary);
-}
-
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.experience-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 40px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.experience-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--gradient-1);
-}
-
-.experience-card:nth-child(2)::before {
-  background: var(--gradient-2);
-}
-
-.experience-card:hover {
-  border-color: var(--accent);
-  box-shadow: var(--card-shadow);
-  transform: translateY(-5px);
-}
-
-.exp-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.exp-title h3 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
-}
-
-.exp-title p {
-  color: var(--accent-light);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.exp-date {
-  font: 500 12px "DM Mono", monospace;
-  color: var(--text-secondary);
-  padding: 8px 16px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--bg-secondary);
-  white-space: nowrap;
-}
-
-.exp-content h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 28px 0 12px;
-  color: var(--text);
-}
-
-.exp-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.exp-content li {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 10px;
-  padding-left: 24px;
-  position: relative;
-}
-
-.exp-content li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.exp-skills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.exp-tag {
-  padding: 6px 14px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font: 500 11px "DM Mono", monospace;
-  color: var(--text-secondary);
-  transition: all 0.2s ease;
-}
-
-.exp-tag:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.exp-learning {
-  background: var(--bg-secondary);
-  border-left: 3px solid var(--accent);
-  padding: 16px 20px;
-  border-radius: 8px;
-  margin-top: 24px;
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.exp-docs {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-
-.exp-docs a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font: 600 12px "DM Mono", monospace;
-  color: var(--accent-light);
-  border: 1px solid var(--border);
-  padding: 10px 16px;
-  border-radius: 10px;
-  transition: all 0.2s ease;
-}
-
-.exp-docs a:hover {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ===== CREDENTIALS SECTION ===== */
-.credentials-section {
-  padding: 120px 0;
-}
-
-.credentials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.credential-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.credential-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-5px);
-  box-shadow: var(--card-shadow);
-}
-
-.credential-icon {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-.credential-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.credential-card p {
-  color: var(--text-muted);
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  padding: 120px 0;
-  background: var(--bg-secondary);
-  text-align: center;
-}
-
-.contact-section h2 {
-  font-size: clamp(40px, 6vw, 70px);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  margin-bottom: 24px;
-}
-
-.contact-section p {
-  color: var(--text-muted);
-  font-size: 18px;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
-}
-
-.contact-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  padding: 60px 0;
-  border-top: 1px solid var(--border);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-text {
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-
-.social-links {
-  display: flex;
-  gap: 16px;
-}
-
-.social-link {
-  padding: 10px 18px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  font: 500 13px "DM Mono", monospace;
-  color: var(--text-muted);
-  transition: all 0.2s ease;
-}
-
-.social-link:hover {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: white;
-  transform: translateY(-3px);
-}
-
-/* ===== SCROLL PROGRESS ===== */
-.scroll-progress {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  z-index: 9999;
-  width: 0%;
-  transition: width 0.1s ease;
-}
-
-/* ===== ANIMATIONS ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .value-grid, .credentials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .skills-grid, .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .business-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .links { display: none; }
-  .hero { padding: 100px 0 60px; }
-  .hero .wrap {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .hero-image {
-    order: -1;
-  }
-  .hero-image img {
-    max-width: 280px;
-  }
-  .hero-stats { flex-direction: column; gap: 20px; }
-  .value-grid, .credentials-grid {
-    grid-template-columns: 1fr;
-  }
-  .business-metrics { grid-template-columns: 1fr; }
-  .business-visual { height: 400px; }
-  .floating-card { display: none; }
-  .section-title { font-size: 32px; }
-  .experience-card { padding: 24px; }
-  .exp-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .exp-title h3 { font-size: 22px; }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Shafiya Naaz — Data & Business Analyst</title>
+
+  <meta
+    name="description"
+    content="Shafiya Naaz — aspiring Data and Business Analyst focused on turning data into clear business decisions."
+  >
+  <meta
+    name="keywords"
+    content="Data Analyst, Business Analyst, Python, SQL, Power BI, Tableau, Excel, Azure, Snowflake, Business Intelligence"
+  >
+  <meta name="author" content="Shafiya Naaz">
+
+  <meta property="og:title" content="Shafiya Naaz — Data & Business Analyst">
+  <meta
+    property="og:description"
+    content="Turning data into clear business decisions through analysis, dashboards, and business-focused insights."
+  >
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================================================
+       THEME COLORS
+       Workspace-image-inspired: charcoal, forest green, sage.
+    ========================================================= */
+
+    :root {
+      color-scheme: dark;
+
+      --bg: #101615;
+      --bg-secondary: #151d1b;
+      --bg-card: #1b2522;
+
+      --text: #f3f5f2;
+      --text-muted: #bdc8c1;
+      --text-secondary: #9eada4;
+
+      --border: #34423b;
+
+      --accent: #83aa96;
+      --accent-light: #b9d4c3;
+      --accent-dark: #436452;
+      --accent-glow: rgba(131, 170, 150, 0.16);
+      --success: #91b9a1;
+
+      --gradient-1: linear-gradient(135deg, #526f60, #354c42);
+      --gradient-2: linear-gradient(135deg, #64776d, #42554b);
+      --gradient-3: linear-gradient(135deg, #5b746d, #364f49);
+      --heading-gradient: linear-gradient(120deg, #f3f5f2, #b9d4c3);
+
+      --nav-bg: rgba(16, 22, 21, 0.93);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+
+      --hero-overlay: linear-gradient(
+        90deg,
+        rgba(16, 22, 21, 0.97) 0%,
+        rgba(16, 22, 21, 0.91) 38%,
+        rgba(16, 22, 21, 0.52) 70%,
+        rgba(16, 22, 21, 0.26) 100%
+      );
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+
+      --bg: #fafbf8;
+      --bg-secondary: #edf2ed;
+      --bg-card: #ffffff;
+
+      --text: #1c2923;
+      --text-muted: #485c50;
+      --text-secondary: #5c6c62;
+
+      --border: #d0dcd2;
+
+      --accent: #3e6550;
+      --accent-light: #466e57;
+      --accent-dark: #2f503e;
+      --accent-glow: rgba(62, 101, 80, 0.12);
+      --success: #3e7252;
+
+      --gradient-1: linear-gradient(135deg, #3e6550, #2f503e);
+      --gradient-2: linear-gradient(135deg, #506c58, #38503f);
+      --gradient-3: linear-gradient(135deg, #476860, #304d45);
+      --heading-gradient: linear-gradient(120deg, #1c2923, #466e57);
+
+      --nav-bg: rgba(250, 251, 248, 0.95);
+      --card-shadow: 0 18px 45px rgba(28, 41, 35, 0.08);
+
+      --hero-overlay: linear-gradient(
+        90deg,
+        rgba(250, 251, 248, 0.98) 0%,
+        rgba(250, 251, 248, 0.95) 38%,
+        rgba(250, 251, 248, 0.74) 70%,
+        rgba(250, 251, 248, 0.44) 100%
+      );
+    }
+
+    /* =========================================================
+       RESET AND BASE
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section[id] {
+      scroll-margin-top: 92px;
+    }
+
+    /* =========================================================
+       SCROLL PROGRESS
+    ========================================================= */
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent-light));
+      transition: width 0.1s linear;
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: var(--heading-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      color: var(--accent-light);
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-card);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.25s ease;
+    }
+
+    .theme-toggle:hover {
+      color: #ffffff;
+      background: var(--accent-dark);
+      border-color: var(--accent);
+      transform: rotate(12deg);
+    }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.28s ease;
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      border-color: transparent;
+      background: var(--gradient-1);
+      box-shadow: 0 10px 30px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn-secondary:hover {
+      color: var(--text);
+      border-color: var(--accent);
+      background: var(--bg-card);
+      transform: translateY(-3px);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 90px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("assets/images/workspace.jpg");
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: saturate(0.62) contrast(1.03);
+      animation: workspaceZoom 22s ease-in-out infinite alternate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: var(--hero-overlay);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 120px;
+      z-index: -1;
+      background: linear-gradient(transparent, var(--bg));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(700px, 100%);
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding: 8px 14px;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--bg-card) 85%, transparent);
+      font: 500 11px "DM Mono", monospace;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 5px rgba(145, 185, 161, 0.12);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(48px, 6.2vw, 78px);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+      font-weight: 800;
+    }
+
+    .gradient-text,
+    .hero h1 span,
+    .stat-value,
+    .metric-value {
+      background: var(--heading-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 630px;
+      margin-bottom: 15px;
+      color: var(--text-muted);
+      font-size: clamp(16px, 1.7vw, 19px);
+      line-height: 1.75;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 31px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat {
+      min-width: 145px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      max-width: 165px;
+      margin-top: 8px;
+      color: var(--text-secondary);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       SHARED SECTIONS
+    ========================================================= */
+
+    .section {
+      padding: 112px 0;
+    }
+
+    .section.alt {
+      background: var(--bg-secondary);
+    }
+
+    .section-header {
+      max-width: 820px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+
+    .section-badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--accent-light);
+      background: var(--bg-card);
+      font: 600 10px "DM Mono", monospace;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       VALUE SECTION
+    ========================================================= */
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .value-card,
+    .project-card,
+    .skill-impact-card,
+    .credential-card,
+    .experience-card,
+    .metric-card {
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      box-shadow: none;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .value-card {
+      position: relative;
+      min-height: 280px;
+      padding: 29px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .value-card::before,
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gradient-1);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:nth-child(2)::before,
+    .project-card:nth-child(2)::before,
+    .project-card:nth-child(5)::before {
+      background: var(--gradient-2);
+    }
+
+    .value-card:nth-child(3)::before,
+    .project-card:nth-child(3)::before {
+      background: var(--gradient-3);
+    }
+
+    .value-card:hover,
+    .project-card:hover,
+    .credential-card:hover,
+    .experience-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--card-shadow);
+      transform: translateY(-6px);
+    }
+
+    .value-card:hover::before,
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      background: var(--gradient-1);
+      font-size: 23px;
+    }
+
+    .value-card:nth-child(2) .value-icon {
+      background: var(--gradient-2);
+    }
+
+    .value-card:nth-child(3) .value-icon {
+      background: var(--gradient-3);
+    }
+
+    .value-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      letter-spacing: -0.025em;
+    }
+
+    .value-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       SKILLS SECTION
+    ========================================================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .skill-impact-card {
+      display: flex;
+      gap: 20px;
+      padding: 27px;
+      border-radius: 20px;
+    }
+
+    .skill-impact-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--card-shadow);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--gradient-1);
+      font-size: 24px;
+    }
+
+    .skill-impact-card:nth-child(2) .skill-icon,
+    .skill-impact-card:nth-child(5) .skill-icon,
+    .skill-impact-card:nth-child(8) .skill-icon {
+      background: var(--gradient-2);
+    }
+
+    .skill-impact-card:nth-child(3) .skill-icon,
+    .skill-impact-card:nth-child(6) .skill-icon {
+      background: var(--gradient-3);
+    }
+
+    .skill-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .skill-name {
+      margin-bottom: 7px;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .skill-problem {
+      margin-bottom: 10px;
+      color: var(--accent-light);
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    .skill-solution {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .skill-tags,
+    .project-tags,
+    .exp-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 17px;
+    }
+
+    .skill-tag,
+    .project-tag,
+    .exp-tag {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-secondary);
+      font: 500 10px "DM Mono", monospace;
+      transition: 0.2s ease;
+    }
+
+    .skill-tag:hover,
+    .project-tag:hover,
+    .exp-tag:hover {
+      color: var(--accent-light);
+      border-color: var(--accent);
+    }
+
+    /* =========================================================
+       BUSINESS SECTION
+    ========================================================= */
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .business-content h3 {
+      margin-bottom: 20px;
+      font-size: clamp(30px, 3.4vw, 43px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .business-content p {
+      margin-bottom: 18px;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .business-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .metric-card {
+      padding: 21px;
+      border-radius: 16px;
+    }
+
+    .metric-value {
+      margin-bottom: 6px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+    }
+
+    .metric-label {
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .business-visual {
+      position: relative;
+      min-height: 485px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--bg-card);
+      box-shadow: var(--card-shadow);
+    }
+
+    .business-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(16, 22, 21, 0.12), var(--bg-card) 94%),
+        url("assets/images/workspace.jpg") center/cover no-repeat;
+      filter: saturate(0.65) brightness(0.76);
+      transform: scale(1.03);
+    }
+
+    [data-theme="light"] .business-visual::before {
+      filter: saturate(0.55) brightness(1.03);
+    }
+
+    .floating-card {
+      position: absolute;
+      max-width: 205px;
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(14px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-card:nth-child(1) {
+      top: 58px;
+      left: 28px;
+    }
+
+    .floating-card:nth-child(2) {
+      top: 185px;
+      right: 28px;
+      animation-delay: 2s;
+    }
+
+    .floating-card:nth-child(3) {
+      bottom: 56px;
+      left: 48px;
+      animation-delay: 4s;
+    }
+
+    .float-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      background: var(--gradient-1);
+      font-size: 18px;
+    }
+
+    .float-title {
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .float-value {
+      color: var(--text-secondary);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      position: relative;
+      padding: 29px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .project-card:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .project-num {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent-light);
+      font: 600 10px "DM Mono", monospace;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin-bottom: 11px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .project-card p {
+      margin-bottom: 18px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .project-impact {
+      margin-bottom: 18px;
+      padding: 14px 15px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 9px 9px 0;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .project-impact strong {
+      color: var(--text);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .project-link {
+      color: var(--accent-light);
+      font: 600 11px "DM Mono", monospace;
+    }
+
+    .project-link:hover {
+      color: var(--text);
+    }
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .experience-card {
+      position: relative;
+      overflow: hidden;
+      padding: 36px;
+      border-radius: 22px;
+    }
+
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: var(--gradient-1);
+    }
+
+    .experience-card:nth-child(2)::before {
+      background: var(--gradient-2);
+    }
+
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .exp-title h3 {
+      margin-bottom: 6px;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .exp-title p {
+      color: var(--accent-light);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .exp-date {
+      flex: 0 0 auto;
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      font: 500 10px "DM Mono", monospace;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .exp-content h4 {
+      margin: 24px 0 11px;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    .exp-content ul {
+      list-style: none;
+    }
+
+    .exp-content li {
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 21px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .exp-content li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-light);
+      font-weight: 700;
+    }
+
+    .exp-learning {
+      margin-top: 22px;
+      padding: 15px 17px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 9px 9px 0;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .exp-learning strong {
+      color: var(--text);
+    }
+
+    .exp-docs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .exp-docs a {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--accent-light);
+      font: 600 10px "DM Mono", monospace;
+      transition: 0.22s ease;
+    }
+
+    .exp-docs a:hover {
+      color: #ffffff;
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       CREDENTIALS
+    ========================================================= */
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .credential-card {
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .credential-icon {
+      margin-bottom: 14px;
+      font-size: 35px;
+    }
+
+    .credential-card h3 {
+      margin-bottom: 9px;
+      font-size: 19px;
+    }
+
+    .credential-card p {
+      min-height: 67px;
+      margin-bottom: 21px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       CONTACT + FOOTER
+    ========================================================= */
+
+    .contact-section {
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      margin-bottom: 20px;
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+    }
+
+    .contact-section p {
+      max-width: 630px;
+      margin: 0 auto 32px;
+      color: var(--text-muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-text {
+      color: var(--text-secondary);
+      font: 500 11px "DM Mono", monospace;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-link {
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--text-muted);
+      font: 500 10px "DM Mono", monospace;
+    }
+
+    .social-link:hover {
+      color: #ffffff;
+      border-color: var(--accent-dark);
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    @keyframes workspaceZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.045); }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.55;
+        transform: scale(1.16);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-11px);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1024px) {
+      .links {
+        gap: 13px;
+        font-size: 12px;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card:last-child {
+        grid-column: auto;
+      }
+
+      .business-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credentials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 36px, 1200px);
+      }
+
+      .links {
+        display: none;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 118px 0 75px;
+      }
+
+      .hero-bg {
+        background-position: 63% center;
+        opacity: 0.62;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 12vw, 60px);
+      }
+
+      .hero-stats {
+        gap: 22px;
+      }
+
+      .stat {
+        min-width: 120px;
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .section-header {
+        margin-bottom: 36px;
+        text-align: left;
+      }
+
+      .section-subtitle {
+        margin: 0;
+      }
+
+      .value-grid,
+      .skills-grid,
+      .projects-grid,
+      .credentials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-impact-card {
+        padding: 22px;
+      }
+
+      .skill-icon {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+        font-size: 20px;
+      }
+
+      .business-metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .business-visual {
+        min-height: 380px;
+      }
+
+      .floating-card {
+        max-width: 170px;
+        padding: 13px;
+      }
+
+      .floating-card:nth-child(1) {
+        top: 28px;
+        left: 18px;
+      }
+
+      .floating-card:nth-child(2) {
+        top: 145px;
+        right: 18px;
+      }
+
+      .floating-card:nth-child(3) {
+        bottom: 28px;
+        left: 25px;
+      }
+
+      .experience-card {
+        padding: 26px 23px;
+      }
+
+      .exp-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .exp-title h3 {
+        font-size: 21px;
+      }
+
+      .credential-card p {
+        min-height: auto;
+      }
+
+      .footer-content {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-cta,
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .business-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .fade-in {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<nav>
-  <div class="wrap nav">
-    <a class="logo" href="#">Shafiya Naaz</a>
-    <div class="nav-right">
-      <div class="links">
-        <a href="#value">Value</a>
-        <a href="#skills">Skills</a>
-        <a href="#business">Business</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#credentials">Credentials</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
-    </div>
-  </div>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <div class="wrap nav">
+      <a class="logo" href="#home">Shafiya Naaz</a>
 
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="wrap">
-      <div class="hero-content">
-        <div class="hero-badge">Available for opportunities</div>
-        <h1>
-          Transforming Data into<br>
-          <span>Business Value</span>
-        </h1>
-        <p class="hero-subtitle">
-          Data & Business Analyst helping companies make smarter decisions, 
-          optimize operations, and unlock growth through actionable insights 
-          powered by Python, SQL, Power BI, Azure, and Snowflake.
-        </p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#value">See How I Help →</a>
-          <a class="btn btn-secondary" href="assets/resume.pdf" download>Download Resume</a>
+      <div class="nav-right">
+        <div class="links">
+          <a href="#value">Value</a>
+          <a href="#skills">Skills</a>
+          <a href="#business">Business</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-value">5+</div>
-            <div class="stat-label">Projects Built</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">2</div>
-            <div class="stat-label">Internships</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">12+</div>
-            <div class="stat-label">Tools & Technologies</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Anime Girl Image -->
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Anime Analyst">
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Switch between dark and light theme"
+          title="Switch theme"
+        >
+          🌙
+        </button>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- VALUE PROPOSITION -->
-  <section class="value-prop" id="value">
-    <div class="wrap">
-      <div class="section-header fade-in">
-        <div class="section-badge">What I Deliver</div>
-        <h2 class="section-title">
-          Driving Business Outcomes<br>Through Data
-        </h2>
-        <p class="section-subtitle">
-          I don't just analyze data—I solve business problems that impact revenue, 
-          efficiency, and strategic decision-making.
-        </p>
-      </div>
-      
-      <div class="value-grid">
-        <div class="value-card fade-in">
-          <div class="value-icon">📊</div>
-          <h3>Data-Driven Decisions</h3>
-          <p>
-            Transform raw data into clear, actionable insights that help leadership 
-            make confident decisions faster. From dashboards to deep-dive analysis, 
-            I ensure every stakeholder understands the story behind the numbers.
-          </p>
-        </div>
-        
-        <div class="value-card fade-in">
-          <div class="value-icon">🚀</div>
-          <h3>Operational Efficiency</h3>
-          <p>
-            Identify bottlenecks, optimize processes, and reduce costs through 
-            data analysis. I help businesses understand where time and resources 
-            are wasted—and how to fix it with measurable improvements.
-          </p>
-        </div>
-        
-        <div class="value-card fade-in">
-          <div class="value-icon">💡</div>
-          <h3>Growth Opportunities</h3>
-          <p>
-            Uncover hidden patterns in customer behavior, sales trends, and market 
-            dynamics. I help businesses identify new revenue streams, improve 
-            customer retention, and scale smarter with data-backed strategies.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- SKILLS WITH IMPACT -->
-  <section class="skills-section" id="skills">
-    <div class="wrap">
-      <div class="section-header fade-in">
-        <div class="section-badge">Skills & Impact</div>
-        <h2 class="section-title">
-          Skills That Solve<br>Real Business Problems
-        </h2>
-        <p class="section-subtitle">
-          Every skill I've learned serves one purpose: solving business challenges 
-          and delivering measurable value. These are the skills top MNCs actively 
-          hire for in 2026.
-        </p>
-      </div>
-      
-      <div class="skills-grid">
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">🗄️</div>
-          <div class="skill-content">
-            <div class="skill-name">SQL & PostgreSQL</div>
-            <div class="skill-problem">Problem: Critical data locked in databases, hard to access at scale</div>
-            <div class="skill-solution">
-              SQL is the #1 required skill in 61-72% of data analyst job postings. 
-              I write complex queries with joins, window functions, and CTEs to extract, 
-              aggregate, and reshape data—enabling self-service analytics and reducing 
-              dependency on IT teams.
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Querying</span>
-              <span class="skill-tag">Joins</span>
-              <span class="skill-tag">Window Functions</span>
-              <span class="skill-tag">Optimization</span>
-            </div>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="hero-badge">
+            Open to entry-level analyst opportunities
           </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">🐍</div>
-          <div class="skill-content">
-            <div class="skill-name">Python & Pandas</div>
-            <div class="skill-problem">Problem: Messy, unstructured data wasting analyst time</div>
-            <div class="skill-solution">
-              Python is required in nearly a third of analyst roles. I automate data 
-              cleaning, transformation, and feature engineering—reducing manual work 
-              by 70%+ and enabling faster insight generation. From EDA to predictive 
-              models, Python turns chaos into clarity.
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Data Cleaning</span>
-              <span class="skill-tag">Automation</span>
-              <span class="skill-tag">EDA</span>
-              <span class="skill-tag">ML</span>
-            </div>
+
+          <h1>
+            Turning data into<br>
+            <span>clear business decisions.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            I'm Shafiya Naaz, an aspiring Data and Business Analyst. Through
+            analytics projects and two internships, I work on preparing reliable
+            data, exploring patterns, and communicating insights that support
+            business decisions.
+          </p>
+
+          <p class="hero-subtitle">
+            My toolkit includes Python, SQL, Excel, Power BI, and Tableau. I am
+            also developing my knowledge of cloud analytics with Azure and
+            Snowflake.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">
+              Explore my projects →
+            </a>
+
+            <a class="btn btn-secondary" href="assets/resume.pdf" download>
+              Download resume ↓
+            </a>
           </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">📈</div>
-          <div class="skill-content">
-            <div class="skill-name">Power BI & Tableau</div>
-            <div class="skill-problem">Problem: Stakeholders can't understand raw data or Excel sheets</div>
-            <div class="skill-solution">
-              Data visualization appears in 74% of analyst job postings. I build 
-              interactive dashboards with DAX measures and KPIs that tell a story—
-              giving executives real-time visibility into performance and enabling 
-              faster course corrections.
+
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-value">2</div>
+              <div class="stat-label">Internship experiences</div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Dashboards</span>
-              <span class="skill-tag">DAX</span>
-              <span class="skill-tag">KPIs</span>
-              <span class="skill-tag">Storytelling</span>
+
+            <div class="stat">
+              <div class="stat-value">Data</div>
+              <div class="stat-label">Cleaning, analysis & visualization</div>
             </div>
-          </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">☁️</div>
-          <div class="skill-content">
-            <div class="skill-name">Azure & Cloud Analytics</div>
-            <div class="skill-problem">Problem: On-premise systems can't scale with growing data volumes</div>
-            <div class="skill-solution">
-              Cloud skills are increasingly non-negotiable as data moves to platforms 
-              like Azure. I work with Azure Synapse, Data Lake, and Power BI integration—
-              enabling scalable, secure, and cost-efficient analytics infrastructure 
-              that grows with the business.
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Azure Synapse</span>
-              <span class="skill-tag">Data Lake</span>
-              <span class="skill-tag">Cloud ETL</span>
-              <span class="skill-tag">Scalability</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">❄️</div>
-          <div class="skill-content">
-            <div class="skill-name">Snowflake & Data Warehousing</div>
-            <div class="skill-problem">Problem: Data scattered across systems, inconsistent reporting</div>
-            <div class="skill-solution">
-              Snowflake is a top-requested cloud warehouse in MNC job descriptions. 
-              I design structured warehouses with Bronze-Silver-Gold layers, ensuring 
-              data quality, consistency, and accessibility. This enables reliable 
-              single-source-of-truth reporting across teams.
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Data Modeling</span>
-              <span class="skill-tag">ETL</span>
-              <span class="skill-tag">Warehouse Design</span>
-              <span class="skill-tag">Data Quality</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">🤖</div>
-          <div class="skill-content">
-            <div class="skill-name">AI & Machine Learning</div>
-            <div class="skill-problem">Problem: Reactive decisions based on historical data only</div>
-            <div class="skill-solution">
-              I apply predictive analytics (regression, classification, clustering) to 
-              forecast trends, segment customers, and identify risks before they become 
-              problems. AI-assisted analysis helps me move from "what happened" to 
-              "what will happen."
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Predictive Analytics</span>
-              <span class="skill-tag">Forecasting</span>
-              <span class="skill-tag">Segmentation</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">📊</div>
-          <div class="skill-content">
-            <div class="skill-name">Excel & Statistical Analysis</div>
-            <div class="skill-problem">Problem: Quick business questions need fast, reliable answers</div>
-            <div class="skill-solution">
-              Excel remains essential in 34% of analyst roles for quick analysis and 
-              reporting. Combined with statistical reasoning, I deliver accurate 
-              insights on trends, correlations, and anomalies that support both 
-              tactical and strategic decisions.
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Pivot Tables</span>
-              <span class="skill-tag">Statistics</span>
-              <span class="skill-tag">Reporting</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-impact-card fade-in">
-          <div class="skill-icon">🤝</div>
-          <div class="skill-content">
-            <div class="skill-name">Business Analysis & Communication</div>
-            <div class="skill-problem">Problem: Technical teams and business stakeholders misaligned</div>
-            <div class="skill-solution">
-              I bridge the gap—translating business requirements into technical specs 
-              and vice versa. Requirements gathering, stakeholder interviews, and clear 
-              communication ensure analytics solutions actually solve the right problems 
-              and drive adoption.
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Requirements</span>
-              <span class="skill-tag">Stakeholder Mgmt</span>
-              <span class="skill-tag">Process Mapping</span>
+
+            <div class="stat">
+              <div class="stat-value">Business</div>
+              <div class="stat-label">Questions, context & recommendations</div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BUSINESS ACUMEN -->
-  <section class="business-section" id="business">
-    <div class="wrap">
-      <div class="section-header fade-in">
-        <div class="section-badge">Business Acumen</div>
-        <h2 class="section-title">
-          Understanding Business,<br>Not Just Data
-        </h2>
-        <p class="section-subtitle">
-          Technical skills are table stakes. What sets me apart is my ability to 
-          understand business context, ask the right questions, and deliver 
-          insights that drive action.
-        </p>
-      </div>
-      
-      <div class="business-grid">
-        <div class="business-content fade-in">
-          <h3>
-            I Think Like a Business Partner,<br>Not Just an Analyst
-          </h3>
-          <p>
-            Every analysis I do starts with one question: "What business problem are we 
-            solving?" Whether it's reducing customer churn, optimizing pricing, or 
-            improving operational efficiency, I ensure my work connects directly to 
-            measurable business outcomes.
+    <!-- Value -->
+    <section class="section alt" id="value">
+      <div class="wrap">
+        <div class="section-header fade-in">
+          <div class="section-badge">What I Bring</div>
+          <h2 class="section-title">
+            Analytics that support<br>
+            better business decisions.
+          </h2>
+          <p class="section-subtitle">
+            I approach data work with business context in mind: clarify the
+            question, prepare trustworthy data, find useful patterns, and
+            present findings in a way stakeholders can act on.
           </p>
-          <p>
-            I've learned to speak the language of business—ROI, KPIs, unit economics, 
-            and strategic priorities. This allows me to partner with stakeholders rather 
-            than just serve them, ensuring analytics investments deliver real, 
-            trackable value.
-          </p>
-          
-          <div class="business-metrics">
-            <div class="metric-card">
-              <div class="metric-value">ROI</div>
-              <div class="metric-label">Focused Analysis</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">KPIs</div>
-              <div class="metric-label">Business-Aligned</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">Strategy</div>
-              <div class="metric-label">Data-Backed</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">Impact</div>
-              <div class="metric-label">Measurable</div>
-            </div>
-          </div>
         </div>
-        
-        <div class="business-visual fade-in">
-          <div class="floating-card">
-            <div class="float-icon">📈</div>
-            <div class="float-title">Revenue Growth</div>
-            <div class="float-value">Identified 15% opportunity</div>
-          </div>
-          <div class="floating-card">
-            <div class="float-icon">💰</div>
-            <div class="float-title">Cost Reduction</div>
-            <div class="float-value">Saved 20+ hours/week</div>
-          </div>
-          <div class="floating-card">
-            <div class="float-icon">🎯</div>
-            <div class="float-title">Customer Insights</div>
-            <div class="float-value">Improved retention 12%</div>
-          </div>
+
+        <div class="value-grid">
+          <article class="value-card fade-in">
+            <div class="value-icon">📊</div>
+            <h3>Clearer decision-making</h3>
+            <p>
+              I convert raw data into understandable trends, KPIs, and
+              dashboards so teams can see what is happening and make decisions
+              with more confidence.
+            </p>
+          </article>
+
+          <article class="value-card fade-in">
+            <div class="value-icon">⚙️</div>
+            <h3>More efficient processes</h3>
+            <p>
+              By examining workflows, data quality, and recurring reporting
+              needs, I can help identify bottlenecks, reduce manual effort, and
+              improve the reliability of analysis.
+            </p>
+          </article>
+
+          <article class="value-card fade-in">
+            <div class="value-icon">💡</div>
+            <h3>Actionable opportunities</h3>
+            <p>
+              Customer, sales, and operational data can reveal patterns worth
+              testing—such as high-value segments, performance gaps, and areas
+              for smarter resource allocation.
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS SECTION -->
-  <section class="projects-section" id="projects">
-    <div class="wrap">
-      <div class="section-header fade-in">
-        <div class="section-badge">Selected Work</div>
-        <h2 class="section-title">
-          Projects That Show<br>Real-World Impact
-        </h2>
-        <p class="section-subtitle">
-          A portfolio of end-to-end analytics projects spanning healthcare, retail, 
-          cloud data platforms, and AI-driven insights.
-        </p>
-      </div>
-      
-      <div class="projects-grid">
-        <div class="project-card fade-in">
-          <span class="project-num">01 / Healthcare</span>
-          <h3>Healthcare Data Analytics</h3>
-          <p>
-            End-to-end analytics workflow covering data cleaning, feature engineering, 
-            PostgreSQL analysis, and Power BI dashboard to surface patient and 
-            operational insights.
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-header fade-in">
+          <div class="section-badge">Skills & Business Value</div>
+          <h2 class="section-title">
+            Tools with a purpose,<br>
+            not just a list.
+          </h2>
+          <p class="section-subtitle">
+            Each skill helps answer a different business question—from accessing
+            data and ensuring quality to explaining results clearly to
+            stakeholders.
           </p>
-          <div class="project-impact">
-            <strong>Business Impact:</strong> Enabled data-driven decisions on patient 
-            trends and resource allocation through a unified dashboard.
-          </div>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">Power BI</span>
-          </div>
         </div>
-        
-        <div class="project-card fade-in">
-          <span class="project-num">02 / Retail</span>
-          <h3>Retail Sales & RFM Analysis</h3>
-          <p>
-            Customer segmentation and retail performance analysis using SQL, Python, 
-            and Tableau to identify high-value customers and actionable sales patterns.
-          </p>
-          <div class="project-impact">
-            <strong>Business Impact:</strong> Identified customer segments for targeted 
-            marketing, improving campaign relevance and retention potential.
-          </div>
-          <div class="project-tags">
-            <span class="project-tag">SQL</span>
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Tableau</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in">
-          <span class="project-num">03 / BI Dashboard</span>
-          <h3>Sales Performance Dashboard (Tableau)</h3>
-          <p>
-            Interactive Tableau dashboard tracking sales KPIs, regional performance, 
-            product trends, and customer behavior for leadership visibility.
-          </p>
-          <div class="project-impact">
-            <strong>Business Impact:</strong> Gave sales teams a single view of 
-            performance metrics, enabling faster target tracking and course correction.
-          </div>
-          <div class="project-tags">
-            <span class="project-tag">Tableau</span>
-            <span class="project-tag">KPIs</span>
-            <span class="project-tag">Data Visualization</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in">
-          <span class="project-num">04 / Cloud + AI</span>
-          <h3>Snowflake × Cowork AI Agent</h3>
-          <p>
-            Cloud-native project combining Snowflake data warehousing with an AI agent 
-            (Cowork) to automate data queries, generate insights, and support 
-            natural-language analytics.
-          </p>
-          <div class="project-impact">
-            <strong>Business Impact:</strong> Reduced time-to-insight by letting business 
-            users query data conversationally instead of writing SQL manually.
-          </div>
-          <div class="project-tags">
-            <span class="project-tag">Snowflake</span>
-            <span class="project-tag">AI Agent</span>
-            <span class="project-tag">Cloud</span>
-            <span class="project-tag">Automation</span>
-          </div>
-        </div>
-        
-        <div class="project-card fade-in">
-          <span class="project-num">05 / Data Engineering</span>
-          <h3>SQL Data Warehouse (SSMS)</h3>
-          <p>
-            Structured warehouse project using SSMS with Bronze, Silver, and Gold 
-            layers to organize raw, cleaned, and business-ready analytical data.
-          </p>
-          <div class="project-impact">
-            <strong>Business Impact:</strong> Created a reliable single source of truth, 
-            reducing reporting inconsistencies across teams.
-          </div>
-          <div class="project-tags">
-            <span class="project-tag">SSMS</span>
-            <span class="project-tag">SQL</span>
-            <span class="project-tag">ETL</span>
-            <span class="project-tag">Data Modeling</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- EXPERIENCE SECTION -->
-  <section class="experience-section" id="experience">
-    <div class="wrap">
-      <div class="section-header fade-in">
-        <div class="section-badge">Experience</div>
-        <h2 class="section-title">
-          Where I'm<br>Putting It Into Practice
-        </h2>
-        <p class="section-subtitle">
-          Hands-on experiences where I applied data analytics, AI, research, 
-          and business-focused problem solving to real-world work.
-        </p>
-      </div>
+        <div class="skills-grid">
 
-      <div class="experience-list">
-        
-        <!-- IBM Internship -->
-        <div class="experience-card fade-in">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>BharatCares × IBM SkillsBuild</h3>
-              <p>Data Analysis with AI · Internship</p>
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">🗄️</div>
+            <div class="skill-content">
+              <h3 class="skill-name">SQL & PostgreSQL</h3>
+              <p class="skill-problem">
+                Business need: data is often stored across multiple tables and systems.
+              </p>
+              <p class="skill-solution">
+                I use SQL to retrieve, join, aggregate, and validate data so teams can
+                move from disconnected records to analysis-ready information.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Queries</span>
+                <span class="skill-tag">Joins</span>
+                <span class="skill-tag">CTEs</span>
+                <span class="skill-tag">Window Functions</span>
+              </div>
             </div>
-            <div class="exp-date">2026 — PRESENT</div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">🐍</div>
+            <div class="skill-content">
+              <h3 class="skill-name">Python, Pandas & NumPy</h3>
+              <p class="skill-problem">
+                Business need: large or messy datasets are difficult to clean manually.
+              </p>
+              <p class="skill-solution">
+                I use Python to clean, transform, explore, and validate data more
+                consistently, creating a repeatable workflow before analysis begins.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Data Cleaning</span>
+                <span class="skill-tag">EDA</span>
+                <span class="skill-tag">Automation</span>
+                <span class="skill-tag">Feature Engineering</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">📈</div>
+            <div class="skill-content">
+              <h3 class="skill-name">Power BI & Tableau</h3>
+              <p class="skill-problem">
+                Business need: stakeholders need insight, not a spreadsheet of numbers.
+              </p>
+              <p class="skill-solution">
+                I design dashboards around key performance indicators, trends, and
+                comparisons so non-technical audiences can understand performance
+                quickly.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Dashboards</span>
+                <span class="skill-tag">KPIs</span>
+                <span class="skill-tag">DAX</span>
+                <span class="skill-tag">Storytelling</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">📑</div>
+            <div class="skill-content">
+              <h3 class="skill-name">Excel & Reporting</h3>
+              <p class="skill-problem">
+                Business need: teams frequently need quick analysis and usable reports.
+              </p>
+              <p class="skill-solution">
+                I use Excel for structured analysis, pivot-based reporting, validation,
+                and quick exploration—helpful for answering everyday business questions
+                reliably.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Pivot Tables</span>
+                <span class="skill-tag">Lookups</span>
+                <span class="skill-tag">Reporting</span>
+                <span class="skill-tag">Validation</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">☁️</div>
+            <div class="skill-content">
+              <h3 class="skill-name">Azure & Cloud Analytics</h3>
+              <p class="skill-problem">
+                Business need: growing data needs scalable and governed analytics platforms.
+              </p>
+              <p class="skill-solution">
+                I am building my Azure knowledge to understand how cloud storage,
+                analytics services, and BI tools work together for scalable reporting
+                and analysis.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Azure Learning</span>
+                <span class="skill-tag">Cloud Data</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Scalability</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">❄️</div>
+            <div class="skill-content">
+              <h3 class="skill-name">Snowflake & Data Warehousing</h3>
+              <p class="skill-problem">
+                Business need: inconsistent sources can produce conflicting reports.
+              </p>
+              <p class="skill-solution">
+                I am developing knowledge of Snowflake and warehouse concepts to help
+                structure data into reliable layers that support consistent,
+                business-ready reporting.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Snowflake Learning</span>
+                <span class="skill-tag">ETL</span>
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">Data Quality</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">🤖</div>
+            <div class="skill-content">
+              <h3 class="skill-name">AI-Assisted Analysis</h3>
+              <p class="skill-problem">
+                Business need: analysts need faster ways to explore and summarize information.
+              </p>
+              <p class="skill-solution">
+                I use AI thoughtfully to accelerate research, organize information,
+                generate analysis ideas, and support insight communication while keeping
+                validation and business judgment central.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">AI Workflows</span>
+                <span class="skill-tag">Research</span>
+                <span class="skill-tag">Insight Support</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="skill-impact-card fade-in">
+            <div class="skill-icon">🤝</div>
+            <div class="skill-content">
+              <h3 class="skill-name">Business Analysis & Communication</h3>
+              <p class="skill-problem">
+                Business need: the right technical output starts with the right question.
+              </p>
+              <p class="skill-solution">
+                I focus on clarifying requirements, understanding stakeholder context,
+                mapping the problem, and communicating findings in simple,
+                action-oriented language.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Requirements</span>
+                <span class="skill-tag">Stakeholders</span>
+                <span class="skill-tag">Problem-Solving</span>
+                <span class="skill-tag">Communication</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Business -->
+    <section class="section alt" id="business">
+      <div class="wrap">
+        <div class="section-header fade-in">
+          <div class="section-badge">Business Perspective</div>
+          <h2 class="section-title">
+            Understanding the business,<br>
+            not only the dataset.
+          </h2>
+          <p class="section-subtitle">
+            Good analysis should be connected to a decision. I focus on the
+            business problem, the stakeholder, the metric that matters, and what
+            a practical next step could look like.
+          </p>
+        </div>
+
+        <div class="business-grid">
+          <div class="business-content fade-in">
+            <h3>
+              I approach analytics as<br>
+              decision support.
+            </h3>
+
+            <p>
+              Before starting analysis, I try to understand the purpose behind
+              the request: Is the team trying to improve sales performance,
+              understand customers, reduce reporting gaps, or prioritize limited
+              resources?
+            </p>
+
+            <p>
+              This business-first perspective helps me choose relevant metrics,
+              avoid analysis without context, and communicate findings as clear
+              recommendations rather than technical output alone.
+            </p>
+
+            <div class="business-metrics">
+              <div class="metric-card">
+                <div class="metric-value">ROI</div>
+                <div class="metric-label">Link insights to business value</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-value">KPIs</div>
+                <div class="metric-label">Track what performance means</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-value">Context</div>
+                <div class="metric-label">Start with the real business question</div>
+              </div>
+
+              <div class="metric-card">
+                <div class="metric-value">Action</div>
+                <div class="metric-label">Turn findings into next steps</div>
+              </div>
+            </div>
           </div>
 
-          <div class="exp-content">
-            <h4>What I Worked On</h4>
-            <ul>
-              <li>Worked through the end-to-end data analytics process, including data cleaning, exploratory data analysis, visualization, and insight generation.</li>
-              <li>Applied analytical techniques to identify patterns, trends, relationships, and meaningful insights from datasets.</li>
-              <li>Developed foundational knowledge of predictive analytics and machine learning concepts including regression, classification, and decision trees.</li>
-              <li>Explored AI-assisted data analysis techniques to accelerate insight generation and support data-driven decision making.</li>
-              <li>Worked with Power BI and Tableau concepts to communicate analytical findings through business-friendly visualizations.</li>
-            </ul>
-
-            <h4>Skills Gained</h4>
-            <div class="exp-skills">
-              <span class="exp-tag">Python</span>
-              <span class="exp-tag">Data Cleaning</span>
-              <span class="exp-tag">EDA</span>
-              <span class="exp-tag">Data Visualization</span>
-              <span class="exp-tag">Predictive Analytics</span>
-              <span class="exp-tag">Machine Learning</span>
-              <span class="exp-tag">Power BI</span>
-              <span class="exp-tag">Tableau</span>
-              <span class="exp-tag">AI</span>
+          <div class="business-visual fade-in" aria-label="Professional analytics workspace visual">
+            <div class="floating-card">
+              <div class="float-icon">📈</div>
+              <div class="float-title">Revenue Analysis</div>
+              <div class="float-value">
+                Explore sales trends and customer segments.
+              </div>
             </div>
 
-            <div class="exp-learning">
-              <strong>What I Learned:</strong> Learned how to approach analytics as an 
-              end-to-end problem-solving process — from understanding and preparing data 
-              to communicating insights and exploring how AI can enhance traditional 
-              analytical workflows.
+            <div class="floating-card">
+              <div class="float-icon">⚙️</div>
+              <div class="float-title">Operational Insights</div>
+              <div class="float-value">
+                Identify bottlenecks and reporting gaps.
+              </div>
             </div>
 
-            <div class="exp-docs">
-              <a href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/ibm-offer-letter.pdf" target="_blank" rel="noopener">
-                OFFER LETTER ↗
-              </a>
-              <a href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/ibm-completion-letter.pdf" target="_blank" rel="noopener">
-                COMPLETION LETTER ↗
+            <div class="floating-card">
+              <div class="float-icon">🎯</div>
+              <div class="float-title">Decision Support</div>
+              <div class="float-value">
+                Connect findings to practical recommendations.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-header fade-in">
+          <div class="section-badge">Selected Work</div>
+          <h2 class="section-title">
+            Projects that demonstrate<br>
+            my analytical approach.
+          </h2>
+          <p class="section-subtitle">
+            A mix of completed analytical work and structured projects currently
+            in development across healthcare, retail, business intelligence,
+            data warehousing, cloud, and AI.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card fade-in">
+            <span class="project-num">01 / Healthcare Analytics</span>
+            <h3>Healthcare Data Analytics</h3>
+            <p>
+              An end-to-end workflow covering data cleaning, exploratory data
+              analysis, feature engineering, PostgreSQL analysis, and a Power BI
+              dashboard to surface healthcare and operational patterns.
+            </p>
+            <div class="project-impact">
+              <strong>Focus:</strong> Create a clearer view of healthcare data to
+              support analysis of patterns, trends, and operational decision-making.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">Power BI</span>
+              <span class="project-tag">EDA</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/ShafiyaNaaz27" target="_blank" rel="noopener">
+                GitHub repository ↗
               </a>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <!-- InAmigos Internship -->
-        <div class="experience-card fade-in">
-          <div class="exp-header">
-            <div class="exp-title">
-              <h3>InAmigos Foundation</h3>
-              <p>Data Analyst Intern · Data Collection, Analysis & Social-Impact Research</p>
+          <article class="project-card fade-in">
+            <span class="project-num">02 / Retail Analytics</span>
+            <h3>Retail Sales & RFM Analysis</h3>
+            <p>
+              A customer segmentation and retail performance project using SQL,
+              Python, and Tableau to explore buying patterns and identify
+              meaningful customer groups.
+            </p>
+            <div class="project-impact">
+              <strong>Focus:</strong> Support targeted business decisions by
+              distinguishing customer groups based on recency, frequency, and
+              monetary value.
             </div>
-            <div class="exp-date">2026</div>
-          </div>
-
-          <div class="exp-content">
-            <h4>What I Worked On</h4>
-            <ul>
-              <li>Researched and compiled structured information on Indian NGOs and social-impact organizations.</li>
-              <li>Collected, organized, and validated information to create structured datasets suitable for analysis and reporting.</li>
-              <li>Researched student volunteer opportunities across India and organized the findings into a clear, usable format.</li>
-              <li>Created an AI-powered NGO report using AI-assisted techniques to organize research findings and generate meaningful insights.</li>
-              <li>Identified potential areas where AI could improve NGO research, reporting, processes, and operational efficiency.</li>
-            </ul>
-
-            <h4>Skills Gained</h4>
-            <div class="exp-skills">
-              <span class="exp-tag">Data Collection</span>
-              <span class="exp-tag">Data Research</span>
-              <span class="exp-tag">Data Analysis</span>
-              <span class="exp-tag">Data Organization</span>
-              <span class="exp-tag">AI-Assisted Analysis</span>
-              <span class="exp-tag">Reporting</span>
-              <span class="exp-tag">Data Validation</span>
-              <span class="exp-tag">Insight Generation</span>
+            <div class="project-tags">
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">RFM Analysis</span>
+              <span class="project-tag">Tableau</span>
             </div>
-
-            <div class="exp-learning">
-              <strong>What I Learned:</strong> Learned how to work with real-world, 
-              unstructured information, convert research into structured data, use AI 
-              to accelerate analytical tasks, and communicate findings clearly for 
-              practical decision making.
-            </div>
-
-            <div class="exp-docs">
-              <a href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/inamigos-offer-letter.pdf" target="_blank" rel="noopener">
-                OFFER LETTER ↗
-              </a>
-              <a href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/inamigos-completion-letter.pdf" target="_blank" rel="noopener">
-                COMPLETION LETTER ↗
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/ShafiyaNaaz27" target="_blank" rel="noopener">
+                GitHub repository ↗
               </a>
             </div>
-          </div>
+          </article>
+
+          <article class="project-card fade-in">
+            <span class="project-num">03 / Planned Project</span>
+            <h3>Sales Performance Dashboard</h3>
+            <p>
+              A Tableau dashboard planned to track sales KPIs, regional
+              performance, product trends, and customer behavior in one
+              decision-ready view.
+            </p>
+            <div class="project-impact">
+              <strong>Planned outcome:</strong> Give stakeholders a focused view
+              of sales performance, making it easier to monitor targets and spot
+              areas that need attention.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Tableau</span>
+              <span class="project-tag">KPIs</span>
+              <span class="project-tag">Data Visualization</span>
+              <span class="project-tag">Business Reporting</span>
+            </div>
+          </article>
+
+          <article class="project-card fade-in">
+            <span class="project-num">04 / Planned Project</span>
+            <h3>Snowflake × Cowork AI Agent</h3>
+            <p>
+              A cloud analytics project planned around Snowflake data warehousing
+              and an AI agent workflow for exploring data, supporting queries,
+              and producing structured analytical summaries.
+            </p>
+            <div class="project-impact">
+              <strong>Planned outcome:</strong> Explore how a governed data
+              warehouse and an AI-assisted interface can make analysis more
+              accessible while keeping data context central.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Snowflake</span>
+              <span class="project-tag">AI Agent</span>
+              <span class="project-tag">Cloud</span>
+              <span class="project-tag">Automation</span>
+            </div>
+          </article>
+
+          <article class="project-card fade-in">
+            <span class="project-num">05 / Data Engineering</span>
+            <h3>SQL Data Warehouse</h3>
+            <p>
+              A structured data warehouse project using SQL Server Management
+              Studio and Bronze, Silver, and Gold layers to organize raw,
+              cleaned, and business-ready data.
+            </p>
+            <div class="project-impact">
+              <strong>Focus:</strong> Practice designing a more reliable source
+              for reporting by separating raw ingestion, transformation, and
+              business-ready analytical data.
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">SSMS</span>
+              <span class="project-tag">SQL</span>
+              <span class="project-tag">ETL</span>
+              <span class="project-tag">Data Modeling</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/ShafiyaNaaz27" target="_blank" rel="noopener">
+                GitHub repository ↗
+              </a>
+            </div>
+          </article>
+
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CREDENTIALS SECTION -->
-  <section class="credentials-section" id="credentials">
-    <div class="wrap">
-      <div class="section-header fade-in">
-        <div class="section-badge">Credentials</div>
-        <h2 class="section-title">
-          Proof of<br>the Journey
-        </h2>
-        <p class="section-subtitle">
-          Certificates, internship documents, and resume — all accessible directly 
-          from this portfolio.
-        </p>
-      </div>
-      
-      <div class="credentials-grid">
-        <div class="credential-card fade-in">
-          <div class="credential-icon">📜</div>
-          <h3>Certificates</h3>
-          <p>
-            View all my certifications and completion letters directly on GitHub.
+    <!-- Experience -->
+    <section class="section alt" id="experience">
+      <div class="wrap">
+        <div class="section-header fade-in">
+          <div class="section-badge">Experience</div>
+          <h2 class="section-title">
+            Where I am putting<br>
+            learning into practice.
+          </h2>
+          <p class="section-subtitle">
+            Hands-on experiences where I applied data analytics, AI, research,
+            and business-focused problem-solving to real-world work.
           </p>
-          <a class="btn btn-secondary" href="https://github.com/ShafiyaNaaz27/shafiya-analytics/tree/main/assets/certificates" target="_blank" rel="noopener">
-            View on GitHub →
+        </div>
+
+        <div class="experience-list">
+
+          <!-- IBM Internship -->
+          <article class="experience-card fade-in">
+            <div class="exp-header">
+              <div class="exp-title">
+                <h3>BharatCares × IBM SkillsBuild</h3>
+                <p>Data Analysis with AI · Internship</p>
+              </div>
+              <div class="exp-date">2026 — PRESENT</div>
+            </div>
+
+            <div class="exp-content">
+              <h4>What I worked on</h4>
+              <ul>
+                <li>
+                  Worked through the end-to-end data analytics process, including
+                  data cleaning, exploratory data analysis, visualization, and
+                  insight generation.
+                </li>
+                <li>
+                  Applied analytical techniques to identify patterns, trends,
+                  relationships, and meaningful insights from datasets.
+                </li>
+                <li>
+                  Developed foundational knowledge of predictive analytics and
+                  machine-learning concepts, including regression,
+                  classification, and decision trees.
+                </li>
+                <li>
+                  Explored AI-assisted data analysis techniques to accelerate
+                  insight generation and support data-driven decision-making.
+                </li>
+                <li>
+                  Worked with Power BI and Tableau concepts to communicate
+                  analytical findings through business-friendly visualizations.
+                </li>
+              </ul>
+
+              <h4>Skills gained</h4>
+              <div class="exp-skills">
+                <span class="exp-tag">Python</span>
+                <span class="exp-tag">Data Cleaning</span>
+                <span class="exp-tag">EDA</span>
+                <span class="exp-tag">Data Visualization</span>
+                <span class="exp-tag">Predictive Analytics</span>
+                <span class="exp-tag">Machine Learning</span>
+                <span class="exp-tag">Power BI</span>
+                <span class="exp-tag">Tableau</span>
+                <span class="exp-tag">AI</span>
+              </div>
+
+              <div class="exp-learning">
+                <strong>What I learned:</strong> How to approach analytics as an
+                end-to-end problem-solving process—from understanding and
+                preparing data to communicating insights and exploring how AI can
+                enhance traditional analytical workflows.
+              </div>
+
+              <div class="exp-docs">
+                <a
+                  href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/ibm-offer-letter.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  OFFER LETTER ↗
+                </a>
+
+                <a
+                  href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/ibm-completion-letter.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  COMPLETION LETTER ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- InAmigos Internship -->
+          <article class="experience-card fade-in">
+            <div class="exp-header">
+              <div class="exp-title">
+                <h3>InAmigos Foundation</h3>
+                <p>Data Analyst Intern · Data Collection, Analysis & Social-Impact Research</p>
+              </div>
+              <div class="exp-date">2026</div>
+            </div>
+
+            <div class="exp-content">
+              <h4>What I worked on</h4>
+              <ul>
+                <li>
+                  Researched and compiled structured information on Indian NGOs
+                  and social-impact organizations.
+                </li>
+                <li>
+                  Collected, organized, and validated information to create
+                  structured datasets suitable for analysis and reporting.
+                </li>
+                <li>
+                  Researched student volunteer opportunities across India and
+                  organized findings into a clear, usable format.
+                </li>
+                <li>
+                  Created an AI-powered NGO report using AI-assisted techniques
+                  to organize research findings and generate meaningful insights.
+                </li>
+                <li>
+                  Identified areas where AI could improve NGO research,
+                  reporting, processes, and operational efficiency.
+                </li>
+              </ul>
+
+              <h4>Skills gained</h4>
+              <div class="exp-skills">
+                <span class="exp-tag">Data Collection</span>
+                <span class="exp-tag">Data Research</span>
+                <span class="exp-tag">Data Analysis</span>
+                <span class="exp-tag">Data Organization</span>
+                <span class="exp-tag">AI-Assisted Analysis</span>
+                <span class="exp-tag">Reporting</span>
+                <span class="exp-tag">Data Validation</span>
+                <span class="exp-tag">Insight Generation</span>
+              </div>
+
+              <div class="exp-learning">
+                <strong>What I learned:</strong> How to work with real-world,
+                unstructured information, convert research into structured data,
+                use AI to accelerate analytical tasks, and communicate findings
+                clearly for practical decision-making.
+              </div>
+
+              <div class="exp-docs">
+                <a
+                  href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/inamigos-offer-letter.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  OFFER LETTER ↗
+                </a>
+
+                <a
+                  href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/inamigos-completion-letter.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  COMPLETION LETTER ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="section" id="credentials">
+      <div class="wrap">
+        <div class="section-header fade-in">
+          <div class="section-badge">Credentials & Writing</div>
+          <h2 class="section-title">
+            Evidence of the<br>
+            learning journey.
+          </h2>
+          <p class="section-subtitle">
+            Certificates, internship documents, resume, and professional writing
+            can be accessed directly from the portfolio.
+          </p>
+        </div>
+
+        <div class="credentials-grid">
+
+          <article class="credential-card fade-in">
+            <div class="credential-icon">📜</div>
+            <h3>Certificates</h3>
+            <p>
+              View certificates and relevant completion documents in my GitHub
+              portfolio repository.
+            </p>
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/ShafiyaNaaz27/shafiya-analytics/tree/main/assets/certificates"
+              target="_blank"
+              rel="noopener"
+            >
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="credential-card fade-in">
+            <div class="credential-icon">📄</div>
+            <h3>Resume</h3>
+            <p>
+              Download my current resume with skills, internship experience, and
+              analytical project details.
+            </p>
+            <a class="btn btn-primary" href="assets/resume.pdf" download>
+              Download resume ↓
+            </a>
+          </article>
+
+          <article class="credential-card fade-in">
+            <div class="credential-icon">✍️</div>
+            <h3>Medium Writing</h3>
+            <p>
+              I share learning notes and practical perspectives on analytics,
+              business intelligence, AI, and career growth.
+            </p>
+
+            <!-- Replace yourusername with your real Medium username -->
+            <a
+              class="btn btn-secondary"
+              href="https://medium.com/@yourusername"
+              target="_blank"
+              rel="noopener"
+            >
+              Read on Medium →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section alt" id="contact">
+      <div class="wrap">
+        <div class="section-badge">Contact</div>
+
+        <h2>
+          Let's make<br>
+          <span class="gradient-text">data do more.</span>
+        </h2>
+
+        <p>
+          Open to entry-level Data Analyst, Business Analyst, BI Analyst, and
+          related opportunities where I can learn, contribute, and solve
+          business problems with data.
+        </p>
+
+        <div class="contact-links">
+          <!-- Replace with your actual email -->
+          <a class="btn btn-primary" href="mailto:your.email@example.com">
+            Get in touch
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/ShafiyaNaaz27"
+            target="_blank"
+            rel="noopener"
+          >
+            View GitHub →
           </a>
         </div>
-        
-        <div class="credential-card fade-in">
-          <div class="credential-icon">📄</div>
-          <h3>Resume</h3>
-          <p>
-            Download my latest resume with detailed experience, skills, and projects.
-          </p>
-          <a class="btn btn-primary" href="assets/resume.pdf" download>
-            Download Resume ↓
-          </a>
-        </div>
-        
-        <div class="credential-card fade-in">
-          <div class="credential-icon">✍️</div>
-          <h3>Medium Articles</h3>
-          <p>
-            Read my articles on data analytics, business intelligence, and career growth.
-          </p>
-          <a class="btn btn-secondary" href="https://medium.com/@yourusername" target="_blank" rel="noopener">
-            Read on Medium →
-          </a>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-section" id="contact">
-    <div class="wrap">
-      <div class="section-badge">Contact</div>
-      <h2>
-        Let's Make<br>
-        <span style="background:linear-gradient(135deg,var(--accent-light),#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent;">Data Do More</span>
-      </h2>
-      <p>
-        Open to entry-level Data Analyst, Business Analyst, and BI Analyst opportunities.
-      </p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:your.email@example.com">Get in Touch</a>
-        <a class="btn btn-secondary" href="https://github.com/ShafiyaNaaz27" target="_blank" rel="noopener">View GitHub</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-content">
+      <div class="footer-text">
+        © 2026 Shafiya Naaz · Data & Business Analyst
       </div>
-    </div>
-  </section>
-</main>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-content">
-      <div class="footer-text">© 2026 Shafiya Naaz — Data & Business Analyst</div>
       <div class="social-links">
-        <a class="social-link" href="https://github.com/ShafiyaNaaz27" target="_blank" rel="noopener">GitHub</a>
-        <a class="social-link" href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="social-link" href="https://medium.com/@yourusername" target="_blank" rel="noopener">Medium</a>
-        <a class="social-link" href="mailto:your.email@example.com">Email</a>
+        <a
+          class="social-link"
+          href="https://github.com/ShafiyaNaaz27"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <!-- Replace yourprofile with your LinkedIn username -->
+        <a
+          class="social-link"
+          href="https://linkedin.com/in/yourprofile"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+        <!-- Replace yourusername with your Medium username -->
+        <a
+          class="social-link"
+          href="https://medium.com/@yourusername"
+          target="_blank"
+          rel="noopener"
+        >
+          Medium
+        </a>
+
+        <!-- Replace with your actual email -->
+        <a class="social-link" href="mailto:your.email@example.com">
+          Email
+        </a>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-const savedTheme = localStorage.getItem('theme') || 'dark';
-html.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
+  <script>
+    /* Theme toggle */
+    const themeToggle = document.getElementById("themeToggle");
+    const html = document.documentElement;
 
-themeToggle.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  updateThemeIcon(next);
-});
+    const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+    html.setAttribute("data-theme", savedTheme);
+    updateThemeIcon(savedTheme);
 
-function updateThemeIcon(t) {
-  themeToggle.textContent = t === 'dark' ? '🌙' : '☀️';
-}
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme");
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
 
-// Scroll Progress
-const scrollProgress = document.getElementById('scrollProgress');
-window.addEventListener('scroll', () => {
-  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-  scrollProgress.style.width = pct + '%';
-});
+      html.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("portfolio-theme", nextTheme);
+      updateThemeIcon(nextTheme);
+    });
 
-// Scroll Animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - document.querySelector('nav').offsetHeight,
-        behavior: 'smooth'
-      });
+    function updateThemeIcon(theme) {
+      themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
     }
-  });
-});
 
-// Navbar shadow on scroll
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  nav.style.boxShadow = window.scrollY > 50 ? '0 10px 40px rgba(0,0,0,0.3)' : 'none';
-});
-</script>
+    /* Scroll progress */
+    const scrollProgress = document.getElementById("scrollProgress");
+
+    window.addEventListener("scroll", () => {
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+
+      scrollProgress.style.width = `${progress}%`;
+    });
+
+    /* Fade-in section animation */
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
+
+    document.querySelectorAll(".fade-in").forEach((element) => {
+      observer.observe(element);
+    });
+
+    /* Smooth scrolling with fixed-navigation offset */
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (event) {
+        const targetId = this.getAttribute("href");
+
+        if (targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        const navHeight = document.querySelector("nav").offsetHeight;
+        const topPosition = target.offsetTop - navHeight;
+
+        window.scrollTo({
+          top: topPosition,
+          behavior: "smooth"
+        });
+      });
+    });
+
+    /* Navigation shadow */
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", () => {
+      nav.style.boxShadow =
+        window.scrollY > 30
+          ? "0 10px 35px rgba(0, 0, 0, 0.16)"
+          : "none";
+    });
+  </script>
 
 </body>
 </html>
