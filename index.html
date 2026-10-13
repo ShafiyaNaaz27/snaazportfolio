@@ -19,92 +19,90 @@
   <meta property="og:title" content="Shafiya Naaz — Data & Business Analyst">
   <meta
     property="og:description"
-    content="Turning data into clear business decisions through analysis, dashboards, and business-focused insights."
+    content="Turning data into clear business decisions through analytics, dashboards, and business-focused insights."
   >
   <meta property="og:type" content="website">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+  //fonts.googleapis.com">
+  //fonts.gstatic.com" crossorigin>
+  //fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <style>
     /* =========================================================
-       THEME COLORS
-       Workspace-image-inspired: charcoal, forest green, sage.
+       BLACK + RUST ORANGE THEME
     ========================================================= */
 
     :root {
       color-scheme: dark;
 
-      --bg: #101615;
-      --bg-secondary: #151d1b;
-      --bg-card: #1b2522;
+      --bg: #0d0e10;
+      --bg-secondary: #151515;
+      --bg-card: #1b1b1c;
 
-      --text: #f3f5f2;
-      --text-muted: #bdc8c1;
-      --text-secondary: #9eada4;
+      --text: #f5f1eb;
+      --text-muted: #bbb3aa;
+      --text-secondary: #928a82;
 
-      --border: #34423b;
+      --border: #343130;
 
-      --accent: #83aa96;
-      --accent-light: #b9d4c3;
-      --accent-dark: #436452;
-      --accent-glow: rgba(131, 170, 150, 0.16);
-      --success: #91b9a1;
+      --accent: #c76c3b;
+      --accent-light: #efad75;
+      --accent-dark: #9e4827;
+      --accent-glow: rgba(199, 108, 59, 0.20);
+      --success: #d98a50;
 
-      --gradient-1: linear-gradient(135deg, #526f60, #354c42);
-      --gradient-2: linear-gradient(135deg, #64776d, #42554b);
-      --gradient-3: linear-gradient(135deg, #5b746d, #364f49);
-      --heading-gradient: linear-gradient(120deg, #f3f5f2, #b9d4c3);
+      --gradient-1: linear-gradient(135deg, #c76c3b, #9e4827);
+      --gradient-2: linear-gradient(135deg, #e29352, #b45b32);
+      --gradient-3: linear-gradient(135deg, #d07d45, #7f3522);
+      --heading-gradient: linear-gradient(120deg, #f5f1eb, #efad75);
 
-      --nav-bg: rgba(16, 22, 21, 0.93);
-      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+      --nav-bg: rgba(13, 14, 16, 0.94);
+      --card-shadow: 0 22px 62px rgba(0, 0, 0, 0.30);
 
       --hero-overlay: linear-gradient(
         90deg,
-        rgba(16, 22, 21, 0.97) 0%,
-        rgba(16, 22, 21, 0.91) 38%,
-        rgba(16, 22, 21, 0.52) 70%,
-        rgba(16, 22, 21, 0.26) 100%
+        rgba(13, 14, 16, 0.98) 0%,
+        rgba(13, 14, 16, 0.92) 37%,
+        rgba(13, 14, 16, 0.58) 69%,
+        rgba(13, 14, 16, 0.25) 100%
       );
     }
 
     [data-theme="light"] {
       color-scheme: light;
 
-      --bg: #fafbf8;
-      --bg-secondary: #edf2ed;
+      --bg: #faf7f3;
+      --bg-secondary: #f0ebe4;
       --bg-card: #ffffff;
 
-      --text: #1c2923;
-      --text-muted: #485c50;
-      --text-secondary: #5c6c62;
+      --text: #27211d;
+      --text-muted: #62574f;
+      --text-secondary: #786a60;
 
-      --border: #d0dcd2;
+      --border: #dfd4c9;
 
-      --accent: #3e6550;
-      --accent-light: #466e57;
-      --accent-dark: #2f503e;
-      --accent-glow: rgba(62, 101, 80, 0.12);
-      --success: #3e7252;
+      --accent: #a94f2b;
+      --accent-light: #b96136;
+      --accent-dark: #80351e;
+      --accent-glow: rgba(169, 79, 43, 0.14);
+      --success: #aa5a31;
 
-      --gradient-1: linear-gradient(135deg, #3e6550, #2f503e);
-      --gradient-2: linear-gradient(135deg, #506c58, #38503f);
-      --gradient-3: linear-gradient(135deg, #476860, #304d45);
-      --heading-gradient: linear-gradient(120deg, #1c2923, #466e57);
+      --gradient-1: linear-gradient(135deg, #a94f2b, #80351e);
+      --gradient-2: linear-gradient(135deg, #be6235, #944321);
+      --gradient-3: linear-gradient(135deg, #aa552d, #76301d);
+      --heading-gradient: linear-gradient(120deg, #27211d, #a94f2b);
 
-      --nav-bg: rgba(250, 251, 248, 0.95);
-      --card-shadow: 0 18px 45px rgba(28, 41, 35, 0.08);
+      --nav-bg: rgba(250, 247, 243, 0.95);
+      --card-shadow: 0 18px 46px rgba(44, 30, 20, 0.09);
 
       --hero-overlay: linear-gradient(
         90deg,
-        rgba(250, 251, 248, 0.98) 0%,
-        rgba(250, 251, 248, 0.95) 38%,
-        rgba(250, 251, 248, 0.74) 70%,
-        rgba(250, 251, 248, 0.44) 100%
+        rgba(250, 247, 243, 0.98) 0%,
+        rgba(250, 247, 243, 0.95) 37%,
+        rgba(250, 247, 243, 0.73) 69%,
+        rgba(250, 247, 243, 0.43) 100%
       );
     }
 
@@ -145,10 +143,6 @@
     section[id] {
       scroll-margin-top: 92px;
     }
-
-    /* =========================================================
-       SCROLL PROGRESS
-    ========================================================= */
 
     .scroll-progress {
       position: fixed;
@@ -202,7 +196,7 @@
 
     .links {
       display: flex;
-      gap: 20px;
+      gap: 19px;
       color: var(--text-muted);
       font-size: 13px;
       font-weight: 500;
@@ -296,11 +290,11 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background-image: url("assets/images/workspace.jpg");
+      background-image: url("assets/images/orange-tech-workspace.jpg");
       background-position: center right;
       background-repeat: no-repeat;
       background-size: cover;
-      filter: saturate(0.62) contrast(1.03);
+      filter: saturate(0.78) contrast(1.06);
       animation: workspaceZoom 22s ease-in-out infinite alternate;
     }
 
@@ -339,10 +333,14 @@
       color: var(--text-muted);
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: color-mix(in srgb, var(--bg-card) 85%, transparent);
+      background: rgba(27, 27, 28, 0.78);
       font: 500 11px "DM Mono", monospace;
       letter-spacing: 0.02em;
       backdrop-filter: blur(10px);
+    }
+
+    [data-theme="light"] .hero-badge {
+      background: rgba(255, 255, 255, 0.72);
     }
 
     .hero-badge::before {
@@ -351,7 +349,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--success);
-      box-shadow: 0 0 0 5px rgba(145, 185, 161, 0.12);
+      box-shadow: 0 0 0 5px rgba(217, 138, 80, 0.12);
       animation: pulse 2s ease-in-out infinite;
     }
 
@@ -421,7 +419,7 @@
     }
 
     /* =========================================================
-       SHARED SECTIONS
+       COMMON SECTIONS
     ========================================================= */
 
     .section {
@@ -467,16 +465,6 @@
       line-height: 1.75;
     }
 
-    /* =========================================================
-       VALUE SECTION
-    ========================================================= */
-
-    .value-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
     .value-card,
     .project-card,
     .skill-impact-card,
@@ -485,8 +473,17 @@
     .metric-card {
       border: 1px solid var(--border);
       background: var(--bg-card);
-      box-shadow: none;
       transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    /* =========================================================
+       VALUE CARDS
+    ========================================================= */
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     .value-card {
@@ -568,7 +565,7 @@
     }
 
     /* =========================================================
-       SKILLS SECTION
+       SKILLS
     ========================================================= */
 
     .skills-grid {
@@ -731,14 +728,14 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(16, 22, 21, 0.12), var(--bg-card) 94%),
-        url("assets/images/workspace.jpg") center/cover no-repeat;
-      filter: saturate(0.65) brightness(0.76);
+        linear-gradient(180deg, rgba(13, 14, 16, 0.12), var(--bg-card) 94%),
+        url("assets/images/orange-tech-workspace.jpg") center/cover no-repeat;
+      filter: saturate(0.78) brightness(0.72);
       transform: scale(1.03);
     }
 
     [data-theme="light"] .business-visual::before {
-      filter: saturate(0.55) brightness(1.03);
+      filter: saturate(0.64) brightness(1.05);
     }
 
     .floating-card {
@@ -747,10 +744,14 @@
       padding: 17px;
       border: 1px solid var(--border);
       border-radius: 15px;
-      background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+      background: rgba(27, 27, 28, 0.88);
       box-shadow: var(--card-shadow);
       backdrop-filter: blur(14px);
       animation: float 6s ease-in-out infinite;
+    }
+
+    [data-theme="light"] .floating-card {
+      background: rgba(255, 255, 255, 0.88);
     }
 
     .floating-card:nth-child(1) {
@@ -854,8 +855,8 @@
 
     .project-links {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
       margin-top: 20px;
     }
 
@@ -1165,10 +1166,6 @@
       .business-grid {
         grid-template-columns: 1fr;
       }
-
-      .credentials-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
     }
 
     @media (max-width: 760px) {
@@ -1191,7 +1188,7 @@
 
       .hero-bg {
         background-position: 63% center;
-        opacity: 0.62;
+        opacity: 0.66;
       }
 
       .hero h1 {
@@ -1327,7 +1324,6 @@
 
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Navigation -->
   <nav>
     <div class="wrap nav">
       <a class="logo" href="#home">Shafiya Naaz</a>
@@ -1358,7 +1354,7 @@
 
   <main>
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-bg" aria-hidden="true"></div>
 
@@ -1416,7 +1412,7 @@
       </div>
     </section>
 
-    <!-- Value -->
+    <!-- VALUE -->
     <section class="section alt" id="value">
       <div class="wrap">
         <div class="section-header fade-in">
@@ -1427,8 +1423,8 @@
           </h2>
           <p class="section-subtitle">
             I approach data work with business context in mind: clarify the
-            question, prepare trustworthy data, find useful patterns, and
-            present findings in a way stakeholders can act on.
+            question, prepare trustworthy data, find useful patterns, and present
+            findings in a way stakeholders can act on.
           </p>
         </div>
 
@@ -1437,9 +1433,9 @@
             <div class="value-icon">📊</div>
             <h3>Clearer decision-making</h3>
             <p>
-              I convert raw data into understandable trends, KPIs, and
-              dashboards so teams can see what is happening and make decisions
-              with more confidence.
+              I convert raw data into understandable trends, KPIs, and dashboards
+              so teams can see what is happening and make decisions with more
+              confidence.
             </p>
           </article>
 
@@ -1447,9 +1443,9 @@
             <div class="value-icon">⚙️</div>
             <h3>More efficient processes</h3>
             <p>
-              By examining workflows, data quality, and recurring reporting
-              needs, I can help identify bottlenecks, reduce manual effort, and
-              improve the reliability of analysis.
+              By examining workflows, data quality, and recurring reporting needs,
+              I can help identify bottlenecks, reduce manual effort, and improve
+              the reliability of analysis.
             </p>
           </article>
 
@@ -1466,7 +1462,7 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="wrap">
         <div class="section-header fade-in">
@@ -1532,9 +1528,8 @@
                 Business need: stakeholders need insight, not a spreadsheet of numbers.
               </p>
               <p class="skill-solution">
-                I design dashboards around key performance indicators, trends, and
-                comparisons so non-technical audiences can understand performance
-                quickly.
+                I design dashboards around KPIs, trends, and comparisons so
+                non-technical audiences can understand performance quickly.
               </p>
               <div class="skill-tags">
                 <span class="skill-tag">Dashboards</span>
@@ -1653,7 +1648,7 @@
       </div>
     </section>
 
-    <!-- Business -->
+    <!-- BUSINESS -->
     <section class="section alt" id="business">
       <div class="wrap">
         <div class="section-header fade-in">
@@ -1663,9 +1658,9 @@
             not only the dataset.
           </h2>
           <p class="section-subtitle">
-            Good analysis should be connected to a decision. I focus on the
-            business problem, the stakeholder, the metric that matters, and what
-            a practical next step could look like.
+            Good analysis should be connected to a decision. I focus on the business
+            problem, the stakeholder, the metric that matters, and what a practical
+            next step could look like.
           </p>
         </div>
 
@@ -1677,10 +1672,9 @@
             </h3>
 
             <p>
-              Before starting analysis, I try to understand the purpose behind
-              the request: Is the team trying to improve sales performance,
-              understand customers, reduce reporting gaps, or prioritize limited
-              resources?
+              Before starting analysis, I try to understand the purpose behind the
+              request: Is the team trying to improve sales performance, understand
+              customers, reduce reporting gaps, or prioritize limited resources?
             </p>
 
             <p>
@@ -1712,7 +1706,7 @@
             </div>
           </div>
 
-          <div class="business-visual fade-in" aria-label="Professional analytics workspace visual">
+          <div class="business-visual fade-in">
             <div class="floating-card">
               <div class="float-icon">📈</div>
               <div class="float-title">Revenue Analysis</div>
@@ -1741,7 +1735,7 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="wrap">
         <div class="section-header fade-in">
@@ -1751,9 +1745,9 @@
             my analytical approach.
           </h2>
           <p class="section-subtitle">
-            A mix of completed analytical work and structured projects currently
-            in development across healthcare, retail, business intelligence,
-            data warehousing, cloud, and AI.
+            A mix of completed analytical work and structured projects currently in
+            development across healthcare, retail, business intelligence, data
+            warehousing, cloud, and AI.
           </p>
         </div>
 
@@ -1814,14 +1808,13 @@
             <span class="project-num">03 / Planned Project</span>
             <h3>Sales Performance Dashboard</h3>
             <p>
-              A Tableau dashboard planned to track sales KPIs, regional
-              performance, product trends, and customer behavior in one
-              decision-ready view.
+              A Tableau dashboard planned to track sales KPIs, regional performance,
+              product trends, and customer behavior in one decision-ready view.
             </p>
             <div class="project-impact">
-              <strong>Planned outcome:</strong> Give stakeholders a focused view
-              of sales performance, making it easier to monitor targets and spot
-              areas that need attention.
+              <strong>Planned outcome:</strong> Give stakeholders a focused view of
+              sales performance, making it easier to monitor targets and spot areas
+              that need attention.
             </div>
             <div class="project-tags">
               <span class="project-tag">Tableau</span>
@@ -1856,13 +1849,13 @@
             <span class="project-num">05 / Data Engineering</span>
             <h3>SQL Data Warehouse</h3>
             <p>
-              A structured data warehouse project using SQL Server Management
-              Studio and Bronze, Silver, and Gold layers to organize raw,
-              cleaned, and business-ready data.
+              A structured data warehouse project using SQL Server Management Studio
+              and Bronze, Silver, and Gold layers to organize raw, cleaned, and
+              business-ready data.
             </p>
             <div class="project-impact">
-              <strong>Focus:</strong> Practice designing a more reliable source
-              for reporting by separating raw ingestion, transformation, and
+              <strong>Focus:</strong> Practice designing a more reliable source for
+              reporting by separating raw ingestion, transformation, and
               business-ready analytical data.
             </div>
             <div class="project-tags">
@@ -1882,7 +1875,7 @@
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- EXPERIENCE -->
     <section class="section alt" id="experience">
       <div class="wrap">
         <div class="section-header fade-in">
@@ -1892,14 +1885,13 @@
             learning into practice.
           </h2>
           <p class="section-subtitle">
-            Hands-on experiences where I applied data analytics, AI, research,
-            and business-focused problem-solving to real-world work.
+            Hands-on experiences where I applied data analytics, AI, research, and
+            business-focused problem-solving to real-world work.
           </p>
         </div>
 
         <div class="experience-list">
 
-          <!-- IBM Internship -->
           <article class="experience-card fade-in">
             <div class="exp-header">
               <div class="exp-title">
@@ -1912,27 +1904,27 @@
             <div class="exp-content">
               <h4>What I worked on</h4>
               <ul>
-                <li>
+                >
                   Worked through the end-to-end data analytics process, including
                   data cleaning, exploratory data analysis, visualization, and
                   insight generation.
                 </li>
-                <li>
+                >
                   Applied analytical techniques to identify patterns, trends,
                   relationships, and meaningful insights from datasets.
                 </li>
-                <li>
+                >
                   Developed foundational knowledge of predictive analytics and
-                  machine-learning concepts, including regression,
-                  classification, and decision trees.
+                  machine-learning concepts, including regression, classification,
+                  and decision trees.
                 </li>
-                <li>
-                  Explored AI-assisted data analysis techniques to accelerate
-                  insight generation and support data-driven decision-making.
+                >
+                  Explored AI-assisted data analysis techniques to accelerate insight
+                  generation and support data-driven decision-making.
                 </li>
-                <li>
-                  Worked with Power BI and Tableau concepts to communicate
-                  analytical findings through business-friendly visualizations.
+                >
+                  Worked with Power BI and Tableau concepts to communicate analytical
+                  findings through business-friendly visualizations.
                 </li>
               </ul>
 
@@ -1951,9 +1943,9 @@
 
               <div class="exp-learning">
                 <strong>What I learned:</strong> How to approach analytics as an
-                end-to-end problem-solving process—from understanding and
-                preparing data to communicating insights and exploring how AI can
-                enhance traditional analytical workflows.
+                end-to-end problem-solving process—from understanding and preparing
+                data to communicating insights and exploring how AI can enhance
+                traditional analytical workflows.
               </div>
 
               <div class="exp-docs">
@@ -1976,7 +1968,6 @@
             </div>
           </article>
 
-          <!-- InAmigos Internship -->
           <article class="experience-card fade-in">
             <div class="exp-header">
               <div class="exp-title">
@@ -1989,25 +1980,25 @@
             <div class="exp-content">
               <h4>What I worked on</h4>
               <ul>
-                <li>
-                  Researched and compiled structured information on Indian NGOs
-                  and social-impact organizations.
+                >
+                  Researched and compiled structured information on Indian NGOs and
+                  social-impact organizations.
                 </li>
-                <li>
-                  Collected, organized, and validated information to create
-                  structured datasets suitable for analysis and reporting.
+                >
+                  Collected, organized, and validated information to create structured
+                  datasets suitable for analysis and reporting.
                 </li>
-                <li>
-                  Researched student volunteer opportunities across India and
-                  organized findings into a clear, usable format.
+                >
+                  Researched student volunteer opportunities across India and organized
+                  findings into a clear, usable format.
                 </li>
-                <li>
-                  Created an AI-powered NGO report using AI-assisted techniques
-                  to organize research findings and generate meaningful insights.
+                >
+                  Created an AI-powered NGO report using AI-assisted techniques to
+                  organize research findings and generate meaningful insights.
                 </li>
-                <li>
-                  Identified areas where AI could improve NGO research,
-                  reporting, processes, and operational efficiency.
+                >
+                  Identified areas where AI could improve NGO research, reporting,
+                  processes, and operational efficiency.
                 </li>
               </ul>
 
@@ -2025,9 +2016,9 @@
 
               <div class="exp-learning">
                 <strong>What I learned:</strong> How to work with real-world,
-                unstructured information, convert research into structured data,
-                use AI to accelerate analytical tasks, and communicate findings
-                clearly for practical decision-making.
+                unstructured information, convert research into structured data, use
+                AI to accelerate analytical tasks, and communicate findings clearly
+                for practical decision-making.
               </div>
 
               <div class="exp-docs">
@@ -2054,7 +2045,7 @@
       </div>
     </section>
 
-    <!-- Credentials -->
+    <!-- CREDENTIALS -->
     <section class="section" id="credentials">
       <div class="wrap">
         <div class="section-header fade-in">
@@ -2064,8 +2055,8 @@
             learning journey.
           </h2>
           <p class="section-subtitle">
-            Certificates, internship documents, resume, and professional writing
-            can be accessed directly from the portfolio.
+            Certificates, internship documents, resume, and professional writing can
+            be accessed directly from the portfolio.
           </p>
         </div>
 
@@ -2107,8 +2098,6 @@
               I share learning notes and practical perspectives on analytics,
               business intelligence, AI, and career growth.
             </p>
-
-            <!-- Replace yourusername with your real Medium username -->
             <a
               class="btn btn-secondary"
               href="https://medium.com/@yourusername"
@@ -2123,7 +2112,7 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="contact-section alt" id="contact">
       <div class="wrap">
         <div class="section-badge">Contact</div>
@@ -2135,12 +2124,11 @@
 
         <p>
           Open to entry-level Data Analyst, Business Analyst, BI Analyst, and
-          related opportunities where I can learn, contribute, and solve
-          business problems with data.
+          related opportunities where I can learn, contribute, and solve business
+          problems with data.
         </p>
 
         <div class="contact-links">
-          <!-- Replace with your actual email -->
           <a class="btn btn-primary" href="mailto:your.email@example.com">
             Get in touch
           </a>
@@ -2159,7 +2147,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="wrap footer-content">
       <div class="footer-text">
@@ -2176,7 +2163,6 @@
           GitHub
         </a>
 
-        <!-- Replace yourprofile with your LinkedIn username -->
         <a
           class="social-link"
           href="https://linkedin.com/in/yourprofile"
@@ -2186,7 +2172,6 @@
           LinkedIn
         </a>
 
-        <!-- Replace yourusername with your Medium username -->
         <a
           class="social-link"
           href="https://medium.com/@yourusername"
@@ -2196,7 +2181,6 @@
           Medium
         </a>
 
-        <!-- Replace with your actual email -->
         <a class="social-link" href="mailto:your.email@example.com">
           Email
         </a>
@@ -2238,7 +2222,7 @@
       scrollProgress.style.width = `${progress}%`;
     });
 
-    /* Fade-in section animation */
+    /* Scroll animations */
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -2258,7 +2242,7 @@
       observer.observe(element);
     });
 
-    /* Smooth scrolling with fixed-navigation offset */
+    /* Smooth scroll */
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (event) {
         const targetId = this.getAttribute("href");
@@ -2287,7 +2271,7 @@
     window.addEventListener("scroll", () => {
       nav.style.boxShadow =
         window.scrollY > 30
-          ? "0 10px 35px rgba(0, 0, 0, 0.16)"
+          ? "0 10px 35px rgba(0, 0, 0, 0.18)"
           : "none";
     });
   </script>
