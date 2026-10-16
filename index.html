@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Shafiya Naaz — Data & Business Analyst Portfolio</title>
+  <title>Shafiya Naaz — Data & Business Analyst</title>
 
   <meta
     name="description"
-    content="Shafiya Naaz's portfolio: data analytics, business-focused insights, Python, SQL, dashboards, projects, and internship experience."
+    content="Shafiya Naaz's portfolio featuring data analytics, business-focused insights, Python, SQL, dashboards, projects, and internship experience."
   >
   <meta name="author" content="Shafiya Naaz">
 
   <meta
     property="og:title"
-    content="Shafiya Naaz — Data & Business Analyst Portfolio"
+    content="Shafiya Naaz — Data & Business Analyst"
   >
   <meta
     property="og:description"
@@ -22,17 +22,14 @@
   >
   <meta property="og:type" content="website">
 
-  <!-- Apply saved theme before rendering -->
   <script>
     try {
-      const savedTheme = localStorage.getItem("portfolio-theme");
+      const theme = localStorage.getItem("portfolio-theme");
 
-      if (savedTheme === "dark" || savedTheme === "light") {
-        document.documentElement.dataset.theme = savedTheme;
+      if (theme === "dark" || theme === "light") {
+        document.documentElement.dataset.theme = theme;
       }
-    } catch (error) {
-      /* Keep the default dark theme when storage is unavailable. */
-    }
+    } catch (error) {}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,16 +38,13 @@
     href="https://fonts.gstatic.com"
     crossorigin
   >
-
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <style>
-    /* =====================================================
-       THEME
-    ===================================================== */
+    /* THEME */
 
     :root {
       color-scheme: dark;
@@ -58,57 +52,48 @@
       --bg: #070b14;
       --surface: #0d1422;
       --card: #111b2d;
-      --card-soft: #142139;
+      --soft: #142139;
 
       --text: #f2f7ff;
       --muted: #afbed5;
       --subtle: #95a6bf;
-
       --border: #293b58;
 
       --blue: #3b82f6;
       --blue-dark: #1d4ed8;
-      --cyan: #67e8f9;
       --link: #8bd5ff;
 
-      --nav: rgba(7, 11, 20, 0.94);
-      --glow: rgba(59, 130, 246, 0.18);
+      --nav: rgba(7, 11, 20, 0.95);
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
 
-      --shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
       --gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
-      --heading-gradient: linear-gradient(110deg, #f2f7ff, #67e8f9);
+      --heading-gradient: linear-gradient(110deg, #f2f7ff, #8bd5ff);
     }
 
     [data-theme="light"] {
       color-scheme: light;
 
       --bg: #ffffff;
-      --surface: #f2f6fc;
+      --surface: #f3f6fb;
       --card: #ffffff;
-      --card-soft: #edf4ff;
+      --soft: #edf4ff;
 
       --text: #12213a;
       --muted: #4b5f7b;
       --subtle: #596d87;
-
       --border: #d4e0ef;
 
       --blue: #2563eb;
       --blue-dark: #1d4ed8;
-      --cyan: #087f9a;
       --link: #1d4ed8;
 
       --nav: rgba(255, 255, 255, 0.95);
-      --glow: rgba(37, 99, 235, 0.11);
+      --shadow: 0 18px 45px rgba(25, 67, 125, 0.07);
 
-      --shadow: 0 18px 45px rgba(25, 67, 125, 0.08);
-      --gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
       --heading-gradient: linear-gradient(110deg, #12213a, #2563eb);
     }
 
-    /* =====================================================
-       BASE
-    ===================================================== */
+    /* BASE */
 
     * {
       box-sizing: border-box;
@@ -128,11 +113,7 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    p {
+    h1, h2, h3, h4, p {
       margin: 0;
     }
 
@@ -145,14 +126,12 @@
       font: inherit;
     }
 
-    a,
-    button {
-      -webkit-tap-highlight-color: transparent;
+    [hidden] {
+      display: none !important;
     }
 
     a:focus-visible,
-    button:focus-visible,
-    summary:focus-visible {
+    button:focus-visible {
       outline: 3px solid var(--blue);
       outline-offset: 5px;
     }
@@ -165,10 +144,6 @@
     .wrap {
       width: min(1180px, calc(100% - 48px));
       margin-inline: auto;
-    }
-
-    .mono {
-      font-family: "DM Mono", monospace;
     }
 
     .gradient-text {
@@ -193,17 +168,15 @@
       top: 12px;
     }
 
-    /* =====================================================
-       NAVIGATION
-    ===================================================== */
+    /* NAVIGATION */
 
     .site-header {
       position: fixed;
       inset: 0 0 auto;
       z-index: 1000;
-      background: var(--nav);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
+      background: var(--nav);
+      backdrop-filter: blur(16px);
     }
 
     .nav {
@@ -212,7 +185,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      min-height: 78px;
+      min-height: 76px;
     }
 
     .logo {
@@ -233,18 +206,17 @@
     }
 
     .nav-right {
-      gap: 18px;
+      gap: 17px;
     }
 
     .nav-links {
-      gap: 20px;
+      gap: 19px;
     }
 
     .nav-links a {
       color: var(--muted);
       font-size: 12px;
       font-weight: 500;
-      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
@@ -254,31 +226,23 @@
     .icon-button {
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       padding: 0;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 11px;
       background: var(--card);
       color: var(--text);
+      font-size: 19px;
       cursor: pointer;
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease;
     }
 
     .icon-button:hover {
       border-color: var(--blue);
-      transform: translateY(-2px);
-    }
-
-    .theme-toggle {
-      font-size: 19px;
     }
 
     .menu-toggle {
       display: none;
-      font-size: 20px;
     }
 
     .scroll-progress {
@@ -286,22 +250,20 @@
       inset: 0 auto auto 0;
       z-index: 2000;
       width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #2563eb, #67e8f9);
+      height: 2px;
+      background: var(--blue);
       transform: scaleX(0);
       transform-origin: left;
       pointer-events: none;
     }
 
-    /* =====================================================
-       BUTTONS
-    ===================================================== */
+    /* BUTTONS */
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 27px;
+      margin-top: 26px;
     }
 
     .btn {
@@ -309,40 +271,31 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 47px;
-      padding: 11px 19px;
+      min-height: 46px;
+      padding: 11px 18px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       background: transparent;
       color: var(--text);
       font-size: 13px;
       font-weight: 600;
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .btn:hover {
       border-color: var(--blue);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .btn-primary {
       border-color: transparent;
       background: var(--gradient);
-      color: #ffffff;
-      box-shadow: 0 9px 25px var(--glow);
-    }
-
-    .btn-primary:hover {
-      border-color: transparent;
-      box-shadow: 0 15px 35px var(--glow);
+      color: white;
     }
 
     .text-link {
       color: var(--link);
-      font: 500 12px "DM Mono", monospace;
+      font: 400 11px "DM Mono", monospace;
     }
 
     .text-link:hover {
@@ -350,9 +303,7 @@
       text-underline-offset: 4px;
     }
 
-    /* =====================================================
-       HERO — NO BACKGROUND IMAGE
-    ===================================================== */
+    /* HERO */
 
     .hero {
       padding: 145px 0 90px;
@@ -361,10 +312,10 @@
 
     .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
       align-items: center;
-      gap: 50px;
-      min-height: 570px;
+      gap: 60px;
+      min-height: 520px;
     }
 
     .hero-content {
@@ -376,8 +327,8 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-bottom: 22px;
-      padding: 7px 12px;
+      margin-bottom: 23px;
+      padding: 7px 11px;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--surface);
@@ -387,24 +338,23 @@
 
     .availability::before {
       content: "";
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--blue);
-      box-shadow: 0 0 0 4px var(--glow);
     }
 
     .hero-name {
       margin-bottom: 12px;
       color: var(--link);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
     }
 
     .hero h1 {
       margin-bottom: 23px;
-      font-size: clamp(43px, 5.2vw, 70px);
-      line-height: 1.08;
+      font-size: clamp(42px, 5.1vw, 68px);
+      line-height: 1.1;
       letter-spacing: -0.055em;
       font-weight: 800;
     }
@@ -424,21 +374,20 @@
       display: flex;
       flex-wrap: wrap;
       gap: 25px;
-      margin-top: 34px;
-      padding-top: 23px;
+      margin-top: 33px;
+      padding-top: 22px;
       border-top: 1px solid var(--border);
     }
 
     .summary-item {
-      flex: 1 1 120px;
+      flex: 1 1 115px;
     }
 
     .summary-item b {
       display: block;
       margin-bottom: 5px;
-      color: var(--text);
-      font-size: 22px;
-      line-height: 1.2;
+      font-size: 21px;
+      line-height: 1.3;
       letter-spacing: -0.03em;
     }
 
@@ -450,281 +399,113 @@
       line-height: 1.6;
     }
 
-    /* =====================================================
-       3D-STYLE ANALYST DASHBOARD
-    ===================================================== */
+    /* MINIMALIST 3D DASHBOARD */
 
     .analyst-visual {
-      position: relative;
       display: grid;
       place-items: center;
-      min-width: 0;
-      height: 480px;
-      perspective: 1100px;
-      isolation: isolate;
-    }
-
-    .analyst-visual::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
       width: 100%;
-      height: 80%;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        var(--glow),
-        transparent 70%
-      );
-      filter: blur(22px);
-    }
-
-    .analytics-scene {
-      position: relative;
-      width: min(100%, 370px);
+      min-width: 0;
       height: 390px;
-      transform-style: preserve-3d;
-      animation: scene-float 9s ease-in-out infinite;
+      perspective: 1100px;
     }
 
-    .analytics-panel {
-      position: absolute;
-      inset: 45px 0 40px;
-      padding: 20px;
+    .minimal-dashboard {
+      position: relative;
+      width: min(100%, 325px);
+      padding: 23px;
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 18px;
       background: var(--card);
+
       box-shadow:
-        0 28px 60px rgba(0, 0, 0, 0.2),
-        8px 9px 0 rgba(37, 99, 235, 0.12);
-      transform: rotateY(-13deg) rotateX(8deg);
-      transform-style: preserve-3d;
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        5px 6px 0 rgba(37, 99, 235, 0.07);
+
+      transform: rotateX(7deg) rotateY(-12deg);
+      animation: dashboard-float 8s ease-in-out infinite;
     }
 
-    .dashboard-header {
+    .minimal-dashboard-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      padding-bottom: 14px;
+      gap: 15px;
+      padding-bottom: 18px;
       border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
     }
 
-    .dashboard-header b {
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 5px;
-    }
-
-    .window-dots i {
-      width: 5px;
-      height: 5px;
+    .minimal-status {
+      width: 6px;
+      height: 6px;
+      flex: 0 0 6px;
       border-radius: 50%;
       background: var(--blue);
     }
 
-    .window-dots i:nth-child(2) {
-      opacity: 0.6;
-    }
-
-    .window-dots i:nth-child(3) {
-      opacity: 0.3;
-    }
-
-    .dashboard-kpis {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .dashboard-kpi {
-      padding: 10px 7px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-    }
-
-    .dashboard-kpi span {
-      display: block;
-      color: var(--subtle);
-      font: 400 8px "DM Mono", monospace;
-    }
-
-    .dashboard-kpi b {
-      display: block;
-      margin-top: 5px;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .dashboard-chart {
+    .minimal-chart {
       display: flex;
       align-items: flex-end;
-      gap: 10px;
-      height: 125px;
-      margin-top: 17px;
-      padding: 12px 8px 0;
+      gap: 14px;
+      height: 155px;
+      margin-top: 20px;
+      padding: 0 8px;
       border-bottom: 1px solid var(--border);
-      background-image: linear-gradient(
-        to top,
-        var(--border) 1px,
-        transparent 1px
-      );
-      background-size: 100% 31px;
     }
 
-    .dashboard-bar {
+    .minimal-bar {
       flex: 1;
       min-width: 0;
       height: var(--height);
-      border-radius: 5px 5px 0 0;
-      background: linear-gradient(to top, #2563eb, #67e8f9);
-      transform-origin: bottom;
-      animation: chart-grow 5s ease-in-out infinite;
-      animation-delay: var(--delay);
+      border-radius: 4px 4px 0 0;
+      background: var(--blue);
+      opacity: 0.24;
     }
 
-    .dashboard-caption {
-      margin-top: 11px;
-      color: var(--subtle);
-      font: 400 8px "DM Mono", monospace;
-      letter-spacing: 0.05em;
-    }
+    .minimal-bar:nth-child(2) { opacity: 0.34; }
+    .minimal-bar:nth-child(3) { opacity: 0.44; }
+    .minimal-bar:nth-child(4) { opacity: 0.58; }
+    .minimal-bar:nth-child(5) { opacity: 0.72; }
+    .minimal-bar:nth-child(6) { opacity: 0.95; }
 
-    .floating-data-card {
-      position: absolute;
-      z-index: 3;
+    .minimal-dashboard-footer {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      animation: card-float 6s ease-in-out infinite;
-    }
-
-    .floating-data-card.first {
-      top: 9px;
-      left: 0;
-    }
-
-    .floating-data-card.second {
-      right: 0;
-      bottom: 13px;
-      animation-delay: -3s;
-    }
-
-    .floating-icon {
-      display: grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: var(--gradient);
-      color: white;
-      font: 500 11px "DM Mono", monospace;
-    }
-
-    .floating-data-card b {
-      display: block;
-      font-size: 10px;
-      font-weight: 600;
-    }
-
-    .floating-data-card small {
-      display: block;
-      margin-top: 2px;
-      color: var(--subtle);
-      font-size: 9px;
-    }
-
-    .data-orbit {
-      position: absolute;
-      z-index: -1;
-      top: 40px;
-      left: 50%;
-      width: 300px;
-      height: 300px;
-      margin-left: -150px;
-      border: 1px dashed var(--blue);
-      border-radius: 50%;
-      opacity: 0.4;
-      animation: orbit-spin 24s linear infinite;
-    }
-
-    .data-orbit::before {
-      content: "";
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 14px var(--blue);
-    }
-
-    .visual-note {
-      position: absolute;
-      bottom: 7px;
-      left: 0;
-      width: 100%;
-      text-align: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 18px;
       color: var(--subtle);
       font: 400 9px "DM Mono", monospace;
     }
 
-    @keyframes scene-float {
+    .minimal-footer-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    [data-theme="light"] .minimal-dashboard {
+      box-shadow:
+        0 22px 45px rgba(25, 67, 125, 0.07),
+        5px 6px 0 rgba(37, 99, 235, 0.04);
+    }
+
+    @keyframes dashboard-float {
       0%, 100% {
-        transform: translateY(0) rotateY(0);
+        transform: translateY(0) rotateX(7deg) rotateY(-12deg);
       }
       50% {
-        transform: translateY(-12px) rotateY(5deg);
+        transform: translateY(-7px) rotateX(7deg) rotateY(-10deg);
       }
     }
 
-    @keyframes card-float {
-      0%, 100% {
-        transform: translateY(0) translateZ(40px);
-      }
-      50% {
-        transform: translateY(-9px) translateZ(40px);
-      }
-    }
-
-    @keyframes chart-grow {
-      0%, 100% {
-        transform: scaleY(0.8);
-        opacity: 0.8;
-      }
-      50% {
-        transform: scaleY(1);
-        opacity: 1;
-      }
-    }
-
-    @keyframes orbit-spin {
-      from {
-        transform: rotateX(65deg) rotateZ(0);
-      }
-      to {
-        transform: rotateX(65deg) rotateZ(360deg);
-      }
-    }
-
-    /* =====================================================
-       SHARED SECTIONS
-    ===================================================== */
+    /* SHARED SECTIONS */
 
     .section {
-      padding: 95px 0;
+      padding: 92px 0;
       border-top: 1px solid var(--border);
     }
 
@@ -734,22 +515,22 @@
 
     .section-heading {
       max-width: 760px;
-      margin-bottom: 38px;
+      margin-bottom: 36px;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       color: var(--link);
-      font: 500 10px "DM Mono", monospace;
-      letter-spacing: 0.13em;
+      font: 400 10px "DM Mono", monospace;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     .section h2 {
-      margin-bottom: 16px;
-      font-size: clamp(31px, 4.3vw, 49px);
-      line-height: 1.15;
+      margin-bottom: 15px;
+      font-size: clamp(31px, 4.2vw, 48px);
+      line-height: 1.16;
       letter-spacing: -0.045em;
       font-weight: 800;
     }
@@ -761,40 +542,37 @@
       line-height: 1.85;
     }
 
-    .grid-three {
+    .grid-three,
+    .grid-two {
       display: grid;
+      gap: 18px;
+    }
+
+    .grid-three {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 19px;
     }
 
     .grid-two {
-      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 19px;
     }
 
     .card {
-      position: relative;
       min-width: 0;
-      padding: 27px;
+      padding: 26px;
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 16px;
       background: var(--card);
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
       border-color: var(--blue);
-      box-shadow: var(--shadow);
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
     .card h3 {
-      margin-bottom: 11px;
-      font-size: 20px;
+      margin-bottom: 10px;
+      font-size: 19px;
       line-height: 1.4;
       letter-spacing: -0.025em;
     }
@@ -802,21 +580,22 @@
     .card p {
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     .card-number {
       display: block;
-      margin-bottom: 19px;
+      margin-bottom: 18px;
       color: var(--link);
-      font: 400 11px "DM Mono", monospace;
+      font: 400 10px "DM Mono", monospace;
+      letter-spacing: 0.04em;
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 19px;
+      margin-top: 18px;
     }
 
     .tag {
@@ -828,25 +607,22 @@
     }
 
     .skill-need {
-      margin-bottom: 9px;
+      margin-bottom: 9px !important;
       color: var(--link) !important;
       font-size: 12px !important;
-      font-weight: 500;
     }
 
     .learning-label {
       display: inline-block;
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       padding: 4px 8px;
       border-radius: 6px;
-      background: var(--card-soft);
+      background: var(--soft);
       color: var(--link);
       font: 400 9px "DM Mono", monospace;
     }
 
-    /* =====================================================
-       BUSINESS PERSPECTIVE
-    ===================================================== */
+    /* BUSINESS */
 
     .business-layout {
       display: grid;
@@ -857,7 +633,7 @@
 
     .business-copy h3 {
       margin-bottom: 17px;
-      font-size: 28px;
+      font-size: 27px;
       line-height: 1.3;
       letter-spacing: -0.035em;
     }
@@ -873,13 +649,13 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-      margin-top: 25px;
+      margin-top: 24px;
     }
 
     .business-question {
       padding: 16px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 11px;
       background: var(--card);
     }
 
@@ -887,60 +663,46 @@
       display: block;
       margin-bottom: 5px;
       color: var(--link);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
     }
 
     .business-question span {
-      display: block;
       color: var(--subtle);
       font-size: 12px;
       line-height: 1.6;
     }
 
     .decision-flow {
-      position: relative;
       display: grid;
-      gap: 13px;
-      padding: 27px;
-      overflow: hidden;
+      gap: 12px;
+      padding: 25px;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      background:
-        radial-gradient(
-          circle at top right,
-          var(--glow),
-          transparent 65%
-        ),
-        var(--card);
+      border-radius: 18px;
+      background: var(--card);
     }
 
     .decision-flow-title {
-      margin-bottom: 7px;
+      margin-bottom: 5px;
       color: var(--subtle);
       font: 400 10px "DM Mono", monospace;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.07em;
     }
 
     .flow-step {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      padding: 17px;
+      gap: 13px;
+      padding: 16px;
       border: 1px solid var(--border);
-      border-radius: 13px;
+      border-radius: 11px;
       background: var(--surface);
     }
 
     .flow-number {
-      display: grid;
-      place-items: center;
-      flex: 0 0 30px;
-      height: 30px;
-      border-radius: 9px;
-      background: var(--gradient);
-      color: white;
+      color: var(--link);
       font: 400 11px "DM Mono", monospace;
+      padding-top: 3px;
     }
 
     .flow-step h4 {
@@ -955,39 +717,11 @@
       line-height: 1.7;
     }
 
-    /* =====================================================
-       PROJECTS
-    ===================================================== */
+    /* PROJECTS */
 
     .project-card {
       display: flex;
       flex-direction: column;
-    }
-
-    .project-focus {
-      margin-top: 18px;
-      padding: 13px;
-      border-left: 3px solid var(--blue);
-      border-radius: 0 8px 8px 0;
-      background: var(--surface);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .project-focus b {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .project-bottom {
-      margin-top: auto;
-      padding-top: 20px;
-    }
-
-    .project-bottom .tags {
-      margin-top: 0;
-      margin-bottom: 15px;
     }
 
     .project-status {
@@ -997,17 +731,41 @@
       font: 400 10px "DM Mono", monospace;
     }
 
-    /* =====================================================
-       EXPERIENCE
-    ===================================================== */
+    .project-focus {
+      margin-top: 17px;
+      padding: 13px;
+      border-left: 2px solid var(--blue);
+      border-radius: 0 7px 7px 0;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .project-focus b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .project-bottom {
+      margin-top: auto;
+      padding-top: 19px;
+    }
+
+    .project-bottom .tags {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    /* EXPERIENCE */
 
     .experience-list {
       display: grid;
-      gap: 23px;
+      gap: 22px;
     }
 
     .experience-card {
-      padding: 32px;
+      padding: 31px;
     }
 
     .experience-header {
@@ -1015,14 +773,14 @@
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 17px;
-      padding-bottom: 22px;
+      gap: 16px;
+      padding-bottom: 21px;
       border-bottom: 1px solid var(--border);
     }
 
     .experience-header h3 {
       margin-bottom: 6px;
-      font-size: 23px;
+      font-size: 22px;
     }
 
     .experience-header p {
@@ -1063,10 +821,10 @@
     }
 
     .learning-note {
-      margin-top: 23px;
+      margin-top: 22px;
       padding: 16px;
-      border-left: 3px solid var(--blue);
-      border-radius: 0 9px 9px 0;
+      border-left: 2px solid var(--blue);
+      border-radius: 0 8px 8px 0;
       background: var(--surface);
       color: var(--muted);
       font-size: 13px;
@@ -1082,48 +840,37 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 22px;
+      margin-top: 21px;
     }
 
     .document-links a {
       padding: 9px 12px;
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: 8px;
       color: var(--link);
       font: 400 10px "DM Mono", monospace;
-      transition: border-color 0.2s ease, background 0.2s ease;
     }
 
     .document-links a:hover {
       border-color: var(--blue);
-      background: var(--card-soft);
+      background: var(--soft);
     }
 
-    /* =====================================================
-       CREDENTIALS
-    ===================================================== */
-
-    .credential-card {
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-    }
+    /* CREDENTIALS */
 
     .credential-card .btn {
-      margin-top: 22px;
+      margin-top: 21px;
     }
 
-    /* =====================================================
-       MEDIUM ARTICLES — VERTICAL TITLE LIST
-    ===================================================== */
+    /* MEDIUM ARTICLES */
 
     .writing-heading {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 23px;
-      margin-bottom: 32px;
+      gap: 22px;
+      margin-bottom: 31px;
     }
 
     .writing-heading .section-heading {
@@ -1133,33 +880,29 @@
 
     .article-list {
       display: grid;
-      gap: 13px;
+      gap: 12px;
     }
 
     .article-row {
       display: grid;
-      grid-template-columns: 35px minmax(0, 1fr) 38px;
+      grid-template-columns: 32px minmax(0, 1fr) 34px;
       align-items: center;
-      gap: 20px;
-      padding: 23px;
+      gap: 19px;
+      padding: 22px;
       border: 1px solid var(--border);
-      border-radius: 15px;
+      border-radius: 13px;
       background: var(--card);
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
     a.article-row:hover {
       border-color: var(--blue);
-      box-shadow: var(--shadow);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .article-number {
       color: var(--subtle);
-      font: 400 12px "DM Mono", monospace;
+      font: 400 11px "DM Mono", monospace;
     }
 
     .article-category {
@@ -1167,52 +910,35 @@
       margin-bottom: 6px;
       color: var(--link);
       font: 400 9px "DM Mono", monospace;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .article-row h3 {
       color: var(--text);
       font-size: clamp(16px, 1.8vw, 20px);
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.6;
       letter-spacing: -0.025em;
       overflow-wrap: anywhere;
     }
 
     .article-arrow {
-      display: grid;
-      place-items: center;
-      width: 35px;
-      height: 35px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
       color: var(--link);
-      font-size: 18px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    a.article-row:hover .article-arrow {
-      border-color: var(--blue-dark);
-      background: var(--blue-dark);
-      color: white;
+      font-size: 19px;
+      text-align: center;
     }
 
     .article-placeholder {
       border-style: dashed;
     }
 
+    .article-placeholder h3,
     .article-placeholder .article-category {
       color: var(--subtle);
     }
 
-    .article-placeholder h3 {
-      color: var(--muted);
-    }
-
-    /* =====================================================
-       CONTACT + FOOTER
-    ===================================================== */
+    /* CONTACT AND FOOTER */
 
     .contact {
       text-align: center;
@@ -1236,7 +962,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px 20px;
-      margin-top: 27px;
+      margin-top: 26px;
     }
 
     .social-links a {
@@ -1249,7 +975,7 @@
     }
 
     footer {
-      padding: 25px 0;
+      padding: 24px 0;
       border-top: 1px solid var(--border);
     }
 
@@ -1263,7 +989,8 @@
       line-height: 1.8;
     }
 
-    /* Visible by default; JavaScript enhances with animation */
+    /* SCROLL REVEAL */
+
     .reveal {
       opacity: 1;
       transform: none;
@@ -1271,30 +998,24 @@
 
     .reveal.is-pending {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(16px);
     }
 
     .reveal.is-visible {
       opacity: 1;
       transform: none;
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
 
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
+    /* RESPONSIVE */
 
     @media (max-width: 1050px) {
       .nav-links {
-        gap: 13px;
+        gap: 12px;
       }
 
       .hero-layout {
-        gap: 25px;
-      }
-
-      .hero h1 {
-        font-size: clamp(43px, 5.6vw, 64px);
+        gap: 30px;
       }
     }
 
@@ -1318,7 +1039,7 @@
         gap: 0;
         padding: 10px;
         border: 1px solid var(--border);
-        border-radius: 14px;
+        border-radius: 13px;
         background: var(--card);
         box-shadow: var(--shadow);
       }
@@ -1334,7 +1055,7 @@
 
       .hero-layout {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
         min-height: auto;
       }
 
@@ -1342,15 +1063,14 @@
         max-width: 690px;
       }
 
-      .analyst-visual {
-        width: 100%;
-        max-width: 440px;
-        margin-inline: auto;
-        height: 440px;
+      .hero {
+        padding: 120px 0 55px;
       }
 
-      .hero {
-        padding: 125px 0 55px;
+      .analyst-visual {
+        max-width: 390px;
+        height: 325px;
+        margin-inline: auto;
       }
 
       .grid-three {
@@ -1377,11 +1097,11 @@
       }
 
       .hero {
-        padding-top: 110px;
+        padding-top: 108px;
       }
 
       .hero h1 {
-        font-size: clamp(39px, 10.7vw, 58px);
+        font-size: clamp(39px, 10.5vw, 57px);
       }
 
       .hero-description {
@@ -1389,15 +1109,29 @@
       }
 
       .hero-summary {
-        gap: 18px;
+        gap: 17px;
       }
 
       .summary-item {
-        flex-basis: 110px;
+        flex-basis: 105px;
+      }
+
+      .minimal-dashboard {
+        width: min(100%, 285px);
+        padding: 20px;
+      }
+
+      .minimal-chart {
+        height: 130px;
+        gap: 12px;
+      }
+
+      .analyst-visual {
+        height: 300px;
       }
 
       .section {
-        padding: 73px 0;
+        padding: 72px 0;
       }
 
       .grid-two {
@@ -1405,47 +1139,25 @@
       }
 
       .card {
-        padding: 23px;
+        padding: 22px;
       }
 
       .experience-card {
-        padding: 25px 22px;
+        padding: 24px 21px;
       }
 
       .experience-header h3 {
         font-size: 20px;
       }
 
-      .business-questions {
-        gap: 10px;
-      }
-
       .decision-flow {
-        padding: 20px;
+        padding: 19px;
       }
 
       .article-row {
-        grid-template-columns: 23px minmax(0, 1fr) 29px;
-        gap: 11px;
-        padding: 19px 14px;
-      }
-
-      .article-arrow {
-        width: 28px;
-        height: 28px;
-        font-size: 16px;
-      }
-
-      .analytics-scene {
-        width: min(100%, 325px);
-      }
-
-      .dashboard-chart {
-        gap: 8px;
-      }
-
-      .analyst-visual {
-        height: 425px;
+        grid-template-columns: 22px minmax(0, 1fr) 23px;
+        gap: 10px;
+        padding: 18px 14px;
       }
 
       .footer-inner {
@@ -1457,18 +1169,6 @@
     @media (max-width: 370px) {
       .business-questions {
         grid-template-columns: 1fr;
-      }
-
-      .dashboard-kpi b {
-        font-size: 10px;
-      }
-
-      .dashboard-kpi span {
-        font-size: 7px;
-      }
-
-      .floating-data-card {
-        padding: 9px;
       }
     }
 
@@ -1488,10 +1188,6 @@
         opacity: 1;
         transform: none;
       }
-
-      .data-orbit {
-        transform: rotateX(65deg);
-      }
     }
   </style>
 </head>
@@ -1505,7 +1201,6 @@
     aria-hidden="true"
   ></div>
 
-  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
       <a class="logo" href="#home">
@@ -1524,7 +1219,7 @@
         </div>
 
         <button
-          class="icon-button theme-toggle"
+          class="icon-button"
           id="themeToggle"
           type="button"
           aria-label="Switch to light theme"
@@ -1552,8 +1247,8 @@
     <!-- HERO -->
     <section class="hero" id="home" aria-labelledby="heroTitle">
       <div class="wrap hero-layout">
-
         <div class="hero-content">
+
           <div class="availability">
             Open to entry-level analyst opportunities
           </div>
@@ -1587,11 +1282,7 @@
               Explore my projects →
             </a>
 
-            <a
-              class="btn"
-              href="assets/resume.pdf"
-              download
-            >
+            <a class="btn" href="assets/resume.pdf" download>
               Download resume ↓
             </a>
           </div>
@@ -1614,99 +1305,32 @@
           </div>
         </div>
 
-        <!-- Decorative dashboard; no claimed client metrics -->
-        <div class="analyst-visual">
-          <div class="analytics-scene" aria-hidden="true">
-            <div class="data-orbit"></div>
+        <!-- Minimal decorative visual; not actual business metrics -->
+        <div class="analyst-visual" aria-hidden="true">
+          <div class="minimal-dashboard">
 
-            <div class="analytics-panel">
-              <div class="dashboard-header">
-                <b>Business Analytics</b>
-
-                <div class="window-dots">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-              </div>
-
-              <div class="dashboard-kpis">
-                <div class="dashboard-kpi">
-                  <span>PREPARE</span>
-                  <b>Clean data</b>
-                </div>
-
-                <div class="dashboard-kpi">
-                  <span>ANALYZE</span>
-                  <b>Find patterns</b>
-                </div>
-
-                <div class="dashboard-kpi">
-                  <span>EXPLAIN</span>
-                  <b>Share insights</b>
-                </div>
-              </div>
-
-              <div class="dashboard-chart">
-                <div
-                  class="dashboard-bar"
-                  style="--height: 35%; --delay: -0.2s"
-                ></div>
-                <div
-                  class="dashboard-bar"
-                  style="--height: 53%; --delay: -0.6s"
-                ></div>
-                <div
-                  class="dashboard-bar"
-                  style="--height: 44%; --delay: -1s"
-                ></div>
-                <div
-                  class="dashboard-bar"
-                  style="--height: 73%; --delay: -1.4s"
-                ></div>
-                <div
-                  class="dashboard-bar"
-                  style="--height: 61%; --delay: -1.8s"
-                ></div>
-                <div
-                  class="dashboard-bar"
-                  style="--height: 92%; --delay: -2.2s"
-                ></div>
-                <div
-                  class="dashboard-bar"
-                  style="--height: 79%; --delay: -2.6s"
-                ></div>
-              </div>
-
-              <p class="dashboard-caption">
-                DATA → CONTEXT → INSIGHT → DECISION
-              </p>
+            <div class="minimal-dashboard-header">
+              <span>Analytics overview</span>
+              <span class="minimal-status"></span>
             </div>
 
-            <div class="floating-data-card first">
-              <div class="floating-icon">SQL</div>
-
-              <div>
-                <b>Reliable foundations</b>
-                <small>Query · Clean · Validate</small>
-              </div>
+            <div class="minimal-chart">
+              <div class="minimal-bar" style="--height: 32%"></div>
+              <div class="minimal-bar" style="--height: 48%"></div>
+              <div class="minimal-bar" style="--height: 40%"></div>
+              <div class="minimal-bar" style="--height: 67%"></div>
+              <div class="minimal-bar" style="--height: 57%"></div>
+              <div class="minimal-bar" style="--height: 83%"></div>
             </div>
 
-            <div class="floating-data-card second">
-              <div class="floating-icon">BI</div>
-
-              <div>
-                <b>Business-ready insights</b>
-                <small>Explore · Explain · Support</small>
-              </div>
+            <div class="minimal-dashboard-footer">
+              <span>Data</span>
+              <span class="minimal-footer-line"></span>
+              <span>Decisions</span>
             </div>
+
           </div>
-
-          <p class="visual-note">
-            An illustration of my analytical workflow
-          </p>
         </div>
-
       </div>
     </section>
 
@@ -1715,12 +1339,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">01 — What I bring</span>
-
-          <h2>
-            Analysis with a<br>
-            business purpose.
-          </h2>
-
+          <h2>Analysis with a<br>business purpose.</h2>
           <p>
             I focus on making data useful: understanding the question,
             checking the evidence, and communicating findings that
@@ -1733,9 +1352,9 @@
             <span class="card-number">01 / CLARITY</span>
             <h3>Clearer decision support</h3>
             <p>
-              Organize data into relevant metrics, comparisons, and
-              dashboards so teams can understand performance and
-              identify questions that need attention.
+              Organize data into relevant metrics, comparisons,
+              and dashboards so teams can understand performance
+              and identify questions that need attention.
             </p>
           </article>
 
@@ -1743,19 +1362,19 @@
             <span class="card-number">02 / RELIABILITY</span>
             <h3>More dependable reporting</h3>
             <p>
-              Clean, validate, and structure information so analysis
-              starts with a reliable foundation rather than
-              inconsistent records or disconnected spreadsheets.
+              Clean, validate, and structure information so
+              analysis starts with a reliable foundation rather
+              than inconsistent records or disconnected spreadsheets.
             </p>
           </article>
 
           <article class="card reveal">
             <span class="card-number">03 / OPPORTUNITY</span>
-            <h3>Patterns worth acting on</h3>
+            <h3>Patterns worth exploring</h3>
             <p>
-              Explore customer, sales, and operational patterns to
-              highlight potential opportunities, reporting gaps,
-              and areas for further investigation.
+              Explore customer, sales, and operational patterns
+              to highlight potential opportunities, reporting
+              gaps, and areas for further investigation.
             </p>
           </article>
         </div>
@@ -1767,12 +1386,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">02 — Skills & value</span>
-
-          <h2>
-            Tools with a purpose,<br>
-            not just a list.
-          </h2>
-
+          <h2>Tools with a purpose,<br>not just a list.</h2>
           <p>
             My technical skills support the analytical workflow.
             Cloud platforms and advanced AI topics are shown as
@@ -1781,7 +1395,6 @@
         </div>
 
         <div class="grid-two">
-
           <article class="card reveal">
             <h3>SQL & PostgreSQL</h3>
             <p class="skill-need">
@@ -1826,8 +1439,7 @@
             <p>
               Present relevant metrics, trends, and comparisons
               through business-focused visualizations, helping
-              readers understand findings without navigating
-              raw data.
+              readers understand findings without navigating raw data.
             </p>
             <div class="tags">
               <span class="tag">Dashboards</span>
@@ -1927,20 +1539,16 @@
               <span class="tag">Recommendations</span>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- BUSINESS PERSPECTIVE -->
+    <!-- BUSINESS -->
     <section class="section section-alt" id="business">
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">03 — Business perspective</span>
-          <h2>
-            Understand the decision.<br>
-            Then explore the data.
-          </h2>
+          <h2>Understand the decision.<br>Then explore the data.</h2>
           <p>
             A useful analysis needs context. I aim to understand
             what the team wants to improve before choosing
@@ -1950,10 +1558,7 @@
 
         <div class="business-layout">
           <div class="business-copy reveal">
-            <h3>
-              I approach analytics<br>
-              as decision support.
-            </h3>
+            <h3>I approach analytics<br>as decision support.</h3>
 
             <p>
               Is the goal to understand customer behavior,
@@ -1973,17 +1578,14 @@
                 <b>Objective</b>
                 <span>What decision needs support?</span>
               </div>
-
               <div class="business-question">
                 <b>Metric</b>
                 <span>How will improvement be evaluated?</span>
               </div>
-
               <div class="business-question">
                 <b>Evidence</b>
                 <span>What does the data actually show?</span>
               </div>
-
               <div class="business-question">
                 <b>Action</b>
                 <span>What practical next step follows?</span>
@@ -2000,9 +1602,7 @@
               <span class="flow-number">01</span>
               <div>
                 <h4>Clarify the question</h4>
-                <p>
-                  Understand the goal, audience, and scope.
-                </p>
+                <p>Understand the goal, audience, and scope.</p>
               </div>
             </div>
 
@@ -2010,9 +1610,7 @@
               <span class="flow-number">02</span>
               <div>
                 <h4>Prepare reliable evidence</h4>
-                <p>
-                  Clean, validate, and organize relevant data.
-                </p>
+                <p>Clean, validate, and organize relevant data.</p>
               </div>
             </div>
 
@@ -2020,9 +1618,7 @@
               <span class="flow-number">03</span>
               <div>
                 <h4>Analyze with context</h4>
-                <p>
-                  Investigate patterns, comparisons, and limitations.
-                </p>
+                <p>Investigate patterns, comparisons, and limitations.</p>
               </div>
             </div>
 
@@ -2030,9 +1626,7 @@
               <span class="flow-number">04</span>
               <div>
                 <h4>Communicate the next step</h4>
-                <p>
-                  Explain findings and practical recommendations.
-                </p>
+                <p>Explain findings and practical recommendations.</p>
               </div>
             </div>
           </div>
@@ -2045,10 +1639,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">04 — Selected projects</span>
-          <h2>
-            My analytical approach,<br>
-            put into practice.
-          </h2>
+          <h2>My analytical approach,<br>put into practice.</h2>
           <p>
             Project work across healthcare, retail, dashboards,
             and data warehousing, alongside planned cloud
@@ -2057,31 +1648,25 @@
         </div>
 
         <div class="grid-two">
-
           <article class="card project-card reveal">
-            <span class="project-status">
-              01 / HEALTHCARE ANALYTICS
-            </span>
+            <span class="project-status">01 / HEALTHCARE ANALYTICS</span>
             <h3>Healthcare Data Analytics</h3>
             <p>
-              An end-to-end analytical workflow covering
-              Python cleaning, feature engineering, PostgreSQL
-              analysis, and a Power BI dashboard.
+              An end-to-end analytical workflow covering Python
+              cleaning, feature engineering, PostgreSQL analysis,
+              and a Power BI dashboard.
             </p>
-
             <div class="project-focus">
               <b>Business question:</b>
-              How can healthcare data be organized and
-              explored to understand trends and operational patterns?
+              How can healthcare data be organized and explored
+              to understand trends and operational patterns?
             </div>
-
             <div class="project-bottom">
               <div class="tags">
                 <span class="tag">Python</span>
                 <span class="tag">PostgreSQL</span>
                 <span class="tag">Power BI</span>
               </div>
-
               <a
                 class="text-link"
                 data-project-link="healthcare"
@@ -2095,9 +1680,7 @@
           </article>
 
           <article class="card project-card reveal">
-            <span class="project-status">
-              02 / RETAIL ANALYTICS
-            </span>
+            <span class="project-status">02 / RETAIL ANALYTICS</span>
             <h3>Retail Sales & RFM Analysis</h3>
             <p>
               Explore retail performance and customer buying
@@ -2105,13 +1688,11 @@
               Segment customers using recency, frequency,
               and monetary value.
             </p>
-
             <div class="project-focus">
               <b>Business question:</b>
-              Which customer groups and sales patterns
-              could inform more focused marketing decisions?
+              Which customer groups and sales patterns could
+              inform more focused marketing decisions?
             </div>
-
             <div class="project-bottom">
               <div class="tags">
                 <span class="tag">SQL</span>
@@ -2119,7 +1700,6 @@
                 <span class="tag">RFM</span>
                 <span class="tag">Tableau</span>
               </div>
-
               <a
                 class="text-link"
                 data-project-link="retail"
@@ -2133,22 +1713,18 @@
           </article>
 
           <article class="card project-card reveal">
-            <span class="project-status">
-              03 / PLANNED PROJECT
-            </span>
+            <span class="project-status">03 / PLANNED PROJECT</span>
             <h3>Sales Performance Dashboard</h3>
             <p>
-              A planned Tableau dashboard to explore
-              sales KPIs, regional performance, product
-              patterns, and target tracking.
+              A planned Tableau dashboard to explore sales KPIs,
+              regional performance, product patterns,
+              and target tracking.
             </p>
-
             <div class="project-focus">
               <b>Planned focus:</b>
               Bring relevant sales metrics into one
               understandable view for business users.
             </div>
-
             <div class="project-bottom">
               <div class="tags">
                 <span class="tag">Tableau</span>
@@ -2159,23 +1735,18 @@
           </article>
 
           <article class="card project-card reveal">
-            <span class="project-status">
-              04 / PLANNED PROJECT
-            </span>
+            <span class="project-status">04 / PLANNED PROJECT</span>
             <h3>Snowflake × Cowork AI Agent</h3>
             <p>
-              A planned exploration of Snowflake data
-              warehousing and an AI-agent workflow for
-              querying data and producing analytical summaries.
+              A planned exploration of Snowflake data warehousing
+              and an AI-agent workflow for querying data
+              and producing analytical summaries.
             </p>
-
             <div class="project-focus">
               <b>Planned focus:</b>
-              Evaluate how AI-assisted access to structured
-              data could support business questions,
-              with appropriate validation.
+              Evaluate how AI-assisted access to structured data
+              could support business questions, with appropriate validation.
             </div>
-
             <div class="project-bottom">
               <div class="tags">
                 <span class="tag">Snowflake</span>
@@ -2186,22 +1757,18 @@
           </article>
 
           <article class="card project-card reveal">
-            <span class="project-status">
-              05 / DATA WAREHOUSING
-            </span>
+            <span class="project-status">05 / DATA WAREHOUSING</span>
             <h3>SQL Data Warehouse</h3>
             <p>
-              A SQL warehouse project using SSMS and
-              Bronze, Silver, and Gold layers to organize
-              raw, cleaned, and business-ready analytical data.
+              A SQL warehouse project using SSMS and Bronze,
+              Silver, and Gold layers to organize raw, cleaned,
+              and business-ready analytical data.
             </p>
-
             <div class="project-focus">
               <b>Business question:</b>
               How can data be transformed into a more
               consistent foundation for reporting?
             </div>
-
             <div class="project-bottom">
               <div class="tags">
                 <span class="tag">SSMS</span>
@@ -2209,7 +1776,6 @@
                 <span class="tag">ETL</span>
                 <span class="tag">Data Warehousing</span>
               </div>
-
               <a
                 class="text-link"
                 data-project-link="warehouse"
@@ -2221,7 +1787,6 @@
               </a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -2231,10 +1796,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">05 — Internship experience</span>
-          <h2>
-            Where I’m putting<br>
-            learning into practice.
-          </h2>
+          <h2>Where I’m putting<br>learning into practice.</h2>
           <p>
             Two internship experiences applying analytics,
             AI-assisted research, data preparation,
@@ -2243,56 +1805,43 @@
         </div>
 
         <div class="experience-list">
-
           <article class="card experience-card reveal">
             <div class="experience-header">
               <div>
                 <h3>BharatCares × IBM SkillsBuild</h3>
                 <p>Data Analysis with AI · Internship</p>
               </div>
-
-              <span class="experience-date">
-                2026 — PRESENT
-              </span>
+              <span class="experience-date">2026 — PRESENT</span>
             </div>
 
             <h4>What I worked on</h4>
-
             <ul>
               <li>
-                Worked through the end-to-end data analytics
-                process, including data cleaning, exploratory
-                data analysis, visualization, and insight generation.
+                Worked through the end-to-end data analytics process,
+                including data cleaning, exploratory data analysis,
+                visualization, and insight generation.
               </li>
-
               <li>
-                Applied analytical techniques to identify
-                patterns, trends, relationships, and meaningful
-                insights from datasets.
+                Applied analytical techniques to identify patterns,
+                trends, relationships, and meaningful insights from datasets.
               </li>
-
               <li>
-                Developed foundational knowledge of predictive
-                analytics and machine learning concepts,
-                including regression, classification,
-                and decision trees.
+                Developed foundational knowledge of predictive analytics
+                and machine learning concepts, including regression,
+                classification, and decision trees.
               </li>
-
               <li>
-                Explored AI-assisted data analysis techniques
-                to accelerate insight generation and support
+                Explored AI-assisted data analysis techniques to
+                accelerate insight generation and support
                 data-driven decision-making.
               </li>
-
               <li>
-                Worked with Power BI and Tableau concepts
-                to communicate analytical findings through
-                business-friendly visualizations.
+                Worked with Power BI and Tableau concepts to communicate
+                analytical findings through business-friendly visualizations.
               </li>
             </ul>
 
             <h4>Skills gained</h4>
-
             <div class="tags">
               <span class="tag">Python</span>
               <span class="tag">Data Cleaning</span>
@@ -2308,10 +1857,9 @@
             <div class="learning-note">
               <b>What I learned:</b>
               How to approach analytics as an end-to-end
-              problem-solving process—from understanding
-              and preparing data to communicating insights
-              and exploring how AI can enhance
-              analytical workflows.
+              problem-solving process—from understanding and
+              preparing data to communicating insights and
+              exploring how AI can enhance analytical workflows.
             </div>
 
             <div class="document-links">
@@ -2322,7 +1870,6 @@
               >
                 OFFER LETTER ↗
               </a>
-
               <a
                 href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/ibm-completion-letter.pdf"
                 target="_blank"
@@ -2342,45 +1889,37 @@
                   Analysis & Social-Impact Research
                 </p>
               </div>
-
               <span class="experience-date">2026</span>
             </div>
 
             <h4>What I worked on</h4>
-
             <ul>
               <li>
                 Researched and compiled structured information
                 on Indian NGOs and social-impact organizations.
               </li>
-
               <li>
                 Collected, organized, and validated information
-                to create structured datasets suitable
-                for analysis and reporting.
+                to create structured datasets suitable for
+                analysis and reporting.
               </li>
-
               <li>
-                Researched student volunteer opportunities
-                across India and organized findings
-                into a clear, usable format.
+                Researched student volunteer opportunities across India
+                and organized findings into a clear, usable format.
               </li>
-
               <li>
-                Created an AI-powered NGO report using
-                AI-assisted techniques to organize
-                research findings and generate insights.
+                Created an AI-powered NGO report using AI-assisted
+                techniques to organize research findings and
+                generate meaningful insights.
               </li>
-
               <li>
-                Identified potential areas where AI could
-                improve NGO research, reporting,
-                processes, and operational efficiency.
+                Identified potential areas where AI could improve
+                NGO research, reporting, processes,
+                and operational efficiency.
               </li>
             </ul>
 
             <h4>Skills gained</h4>
-
             <div class="tags">
               <span class="tag">Data Collection</span>
               <span class="tag">Data Research</span>
@@ -2394,11 +1933,10 @@
 
             <div class="learning-note">
               <b>What I learned:</b>
-              How to work with real-world, unstructured
-              information, convert research into structured
-              data, use AI to support analytical tasks,
-              and communicate findings clearly for
-              practical decision-making.
+              How to work with real-world, unstructured information,
+              convert research into structured data, use AI to
+              support analytical tasks, and communicate findings
+              clearly for practical decision-making.
             </div>
 
             <div class="document-links">
@@ -2409,7 +1947,6 @@
               >
                 OFFER LETTER ↗
               </a>
-
               <a
                 href="https://shafiyanaaz27.github.io/shafiya-analytics/assets/experience/inamigos-completion-letter.pdf"
                 target="_blank"
@@ -2419,7 +1956,6 @@
               </a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -2429,10 +1965,7 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">06 — Credentials</span>
-          <h2>
-            Explore the background<br>
-            behind the work.
-          </h2>
+          <h2>Explore the background<br>behind the work.</h2>
           <p>
             View my certificates and download my resume
             for an overview of skills, projects,
@@ -2444,10 +1977,9 @@
           <article class="card credential-card reveal">
             <h3>Certificates & Learning</h3>
             <p>
-              View certificates and relevant completion
-              documents in my GitHub portfolio repository.
+              View certificates and relevant completion documents
+              in my GitHub portfolio repository.
             </p>
-
             <a
               class="btn"
               href="https://github.com/ShafiyaNaaz27/shafiya-analytics/tree/main/assets/certificates"
@@ -2464,12 +1996,7 @@
               Download my resume with analytical skills,
               project details, and internship experience.
             </p>
-
-            <a
-              class="btn btn-primary"
-              href="assets/resume.pdf"
-              download
-            >
+            <a class="btn btn-primary" href="assets/resume.pdf" download>
               Download resume ↓
             </a>
           </article>
@@ -2487,20 +2014,14 @@
         <div class="writing-heading reveal">
           <div class="section-heading">
             <span class="eyebrow">07 — Writing on Medium</span>
-
-            <h2 id="writingTitle">
-              Questions worth<br>
-              exploring.
-            </h2>
-
+            <h2 id="writingTitle">Questions worth<br>exploring.</h2>
             <p>
-              I write on Medium to explore ideas, share
-              my learning, and explain my thinking.
-              Select an article title to read the full post.
+              I write on Medium to explore ideas, share my learning,
+              and explain my thinking. Select an article title
+              to read the full post.
             </p>
           </div>
 
-          <!-- Shown after you add your Medium profile URL -->
           <a
             class="text-link"
             id="mediumProfileLink"
@@ -2512,13 +2033,10 @@
           </a>
         </div>
 
-        <!-- Article rows are generated from MEDIUM_ARTICLES below -->
         <div class="article-list" id="mediumArticles"></div>
 
         <noscript>
-          <p>
-            Enable JavaScript to display the article list.
-          </p>
+          <p>Enable JavaScript to display the article list.</p>
         </noscript>
       </div>
     </section>
@@ -2528,22 +2046,18 @@
       <div class="wrap">
         <div class="section-heading reveal">
           <span class="eyebrow">08 — Contact</span>
-
           <h2>
             Let’s make<br>
             <span class="gradient-text">data do more.</span>
           </h2>
-
           <p>
             Open to entry-level Data Analyst, Business Analyst,
-            BI Analyst, and related opportunities where
-            I can learn, contribute, and solve
-            business problems with data.
+            BI Analyst, and related opportunities where I can learn,
+            contribute, and solve business problems with data.
           </p>
         </div>
 
         <div class="actions">
-          <!-- Shown when your actual email is configured -->
           <a
             class="btn btn-primary"
             id="emailButton"
@@ -2551,12 +2065,7 @@
           >
             Get in touch →
           </a>
-
-          <a
-            class="btn"
-            href="assets/resume.pdf"
-            download
-          >
+          <a class="btn" href="assets/resume.pdf" download>
             Download resume ↓
           </a>
         </div>
@@ -2588,9 +2097,7 @@
             Medium ↗
           </a>
 
-          <a id="emailSocialLink" hidden>
-            Email ↗
-          </a>
+          <a id="emailSocialLink" hidden>Email ↗</a>
         </div>
       </div>
     </section>
@@ -2602,18 +2109,15 @@
       <span>
         © <span id="footerYear">2026</span> Shafiya Naaz
       </span>
-
-      <span>
-        Data · Business Context · Clear Communication
-      </span>
+      <span>Data · Business Context · Clear Communication</span>
     </div>
   </footer>
 
   <script>
-    /* =====================================================
-       EDIT YOUR LINKS HERE
-       Leave unknown links empty rather than using fake URLs.
-    ===================================================== */
+    /* ==================================================
+       YOUR PROFILE LINKS
+       Add your actual information inside the quotes.
+    ================================================== */
 
     const PROFILE = {
       email: "",
@@ -2621,55 +2125,46 @@
       medium: ""
     };
 
-    /*
-      Example structure only:
-
-      email: "your-real-email@gmail.com"
-      linkedin: "https://www.linkedin.com/in/your-real-username/"
-      medium: "https://medium.com/@your-real-username"
-    */
-
-    /* Add exact repository URLs when available */
+    /* Add exact project repository URLs when available */
     const PROJECT_LINKS = {
       healthcare: "",
       retail: "",
       warehouse: ""
     };
 
-    /*
-      Paste your 4 actual question-style titles and
-      individual Medium article URLs below.
+    /* ==================================================
+       YOUR FOUR MEDIUM ARTICLES
 
-      Empty URLs show non-clickable placeholders.
-      Adding a valid HTTPS URL makes the full row clickable.
-    */
+       Replace each title with your real question title.
+       Paste the individual article URL in its url field.
+
+       Empty URLs remain non-clickable placeholders.
+    ================================================== */
 
     const MEDIUM_ARTICLES = [
       {
-        title: "[Paste your first question-style article title here]",
+        title: "[Your first question-style article title]",
         category: "Medium article",
         url: ""
       },
       {
-        title: "[Paste your second question-style article title here]",
+        title: "[Your second question-style article title]",
         category: "Medium article",
         url: ""
       },
       {
-        title: "[Paste your third question-style article title here]",
+        title: "[Your third question-style article title]",
         category: "Medium article",
         url: ""
       },
       {
-        title: "[Paste your fourth question-style article title here]",
+        title: "[Your fourth question-style article title]",
         category: "Medium article",
         url: ""
       }
     ];
 
-    /* =====================================================
-       URL VALIDATION
-    ===================================================== */
+    /* LINK HELPERS */
 
     function isHttpsUrl(value) {
       if (!value) return false;
@@ -2690,10 +2185,6 @@
       element.hidden = false;
     }
 
-    /* =====================================================
-       PROFILE LINKS
-    ===================================================== */
-
     configureExternalLink("linkedinLink", PROFILE.linkedin);
     configureExternalLink("mediumProfileLink", PROFILE.medium);
     configureExternalLink("mediumSocialLink", PROFILE.medium);
@@ -2708,29 +2199,21 @@
       });
     }
 
-    /* =====================================================
-       PROJECT LINKS
-    ===================================================== */
-
     document.querySelectorAll("[data-project-link]").forEach((link) => {
-      const projectKey = link.dataset.projectLink;
-      const projectUrl = PROJECT_LINKS[projectKey];
+      const url = PROJECT_LINKS[link.dataset.projectLink];
 
-      if (isHttpsUrl(projectUrl)) {
-        link.href = projectUrl;
+      if (isHttpsUrl(url)) {
+        link.href = url;
         link.textContent = "View project repository ↗";
       }
     });
 
-    /* =====================================================
-       MEDIUM ARTICLES
-    ===================================================== */
+    /* MEDIUM LIST */
 
     const articleContainer = document.getElementById("mediumArticles");
 
     MEDIUM_ARTICLES.slice(0, 4).forEach((article, index) => {
       const hasLink = isHttpsUrl(article.url);
-
       const row = document.createElement(hasLink ? "a" : "article");
 
       row.className = "article-row reveal";
@@ -2766,13 +2249,10 @@
 
       content.append(category, title);
       row.append(number, content, arrow);
-
       articleContainer.appendChild(row);
     });
 
-    /* =====================================================
-       THEME TOGGLE
-    ===================================================== */
+    /* THEME */
 
     const html = document.documentElement;
     const themeToggle = document.getElementById("themeToggle");
@@ -2785,32 +2265,23 @@
 
       themeToggle.setAttribute("aria-label", label);
       themeToggle.title = label;
-
-      const icon = themeToggle.querySelector("span");
-      icon.textContent = isDark ? "☀" : "☾";
+      themeToggle.querySelector("span").textContent = isDark ? "☀" : "☾";
     }
 
     updateThemeButton();
 
     themeToggle.addEventListener("click", () => {
-      const nextTheme = html.dataset.theme === "light"
-        ? "dark"
-        : "light";
-
+      const nextTheme = html.dataset.theme === "light" ? "dark" : "light";
       html.dataset.theme = nextTheme;
 
       try {
         localStorage.setItem("portfolio-theme", nextTheme);
-      } catch (error) {
-        /* Theme still works without storage. */
-      }
+      } catch (error) {}
 
       updateThemeButton();
     });
 
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
+    /* MOBILE MENU */
 
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -2830,7 +2301,6 @@
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"
       );
-
       menuToggle.querySelector("span").textContent = isOpen ? "×" : "☰";
     });
 
@@ -2848,9 +2318,7 @@
     });
 
     document.addEventListener("click", (event) => {
-      if (!event.target.closest(".nav")) {
-        closeMenu();
-      }
+      if (!event.target.closest(".nav")) closeMenu();
     });
 
     window.matchMedia("(min-width: 901px)").addEventListener(
@@ -2860,9 +2328,7 @@
       }
     );
 
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
+    /* SUBTLE SCROLL REVEAL */
 
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -2881,9 +2347,7 @@
             }
           });
         },
-        {
-          threshold: 0.06
-        }
+        { threshold: 0.06 }
       );
 
       revealElements.forEach((element) => {
@@ -2897,15 +2361,12 @@
             element.classList.remove("is-pending");
             element.classList.add("is-visible");
           });
-
           observer.disconnect();
         }
       });
     }
 
-    /* =====================================================
-       SCROLL PROGRESS
-    ===================================================== */
+    /* SCROLL PROGRESS */
 
     const progressBar = document.getElementById("scrollProgress");
     let scrollUpdateQueued = false;
@@ -2941,6 +2402,5 @@
     document.getElementById("footerYear").textContent =
       new Date().getFullYear();
   </script>
-
 </body>
 </html>
